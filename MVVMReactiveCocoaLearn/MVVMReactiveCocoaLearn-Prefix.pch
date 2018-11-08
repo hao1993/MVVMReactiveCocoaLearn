@@ -1,0 +1,28 @@
+//
+//  MVVMReactiveCocoaLearn-Prefix.pch
+//  MVVMReactiveCocoaLearn
+//
+//  Created by 杨世浩 on 2018/11/8.
+//  Copyright © 2018 hao. All rights reserved.
+//
+
+#ifndef MVVMReactiveCocoaLearn_Prefix_pch
+#define MVVMReactiveCocoaLearn_Prefix_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#ifdef __OBJC__
+    #import <ReactiveCocoa/ReactiveCocoa.h>
+    #import <OctoKit/OctoKit.h>
+    #import "SSKeychain.h"
+    #import "SSKeychain+MRCLUtil.h"
+    #import "MRCLConfig.h"
+    #import "MKNetworkKit.h"
+    #import <Mantle/Mantle.h>
+    #import "MRCTConstant.h"
+    #import "MRCLViewModelServices.h"
+
+#endif
+
+#endif /* MVVMReactiveCocoaLearn_Prefix_pch */

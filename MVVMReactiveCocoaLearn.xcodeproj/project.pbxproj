@@ -7,18 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FB2ED1B9219332A200461C9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2ED1B8219332A200461C9A /* AppDelegate.m */; };
+		27F2A5754FD291894679F3B7 /* libPods-MVVMReactiveCocoaLearn.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D655EA0BCBF1F01725CAE4F8 /* libPods-MVVMReactiveCocoaLearn.a */; };
 		FB2ED1BC219332A300461C9A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2ED1BB219332A300461C9A /* ViewController.m */; };
 		FB2ED1BF219332A300461C9A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB2ED1BD219332A300461C9A /* Main.storyboard */; };
 		FB2ED1C1219332A400461C9A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB2ED1C0219332A400461C9A /* Assets.xcassets */; };
 		FB2ED1C4219332A400461C9A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB2ED1C2219332A400461C9A /* LaunchScreen.storyboard */; };
 		FB2ED1C7219332A400461C9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2ED1C6219332A400461C9A /* main.m */; };
+		FB2ED1CF219449B900461C9A /* MRCLAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2ED1CE219449B900461C9A /* MRCLAppDelegate.m */; };
+		FB2ED1D521944C2700461C9A /* SSKeychain+MRCLUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2ED1D421944C2700461C9A /* SSKeychain+MRCLUtil.m */; };
+		FB2ED1E021944D2C00461C9A /* MRCLRepositoryServiceImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2ED1DF21944D2C00461C9A /* MRCLRepositoryServiceImpl.m */; };
+		FB2ED1E321944D6900461C9A /* MRCLAppStoreServiceImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2ED1E221944D6900461C9A /* MRCLAppStoreServiceImpl.m */; };
+		FB2ED1EA21944E2000461C9A /* MRCLViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2ED1E921944E2000461C9A /* MRCLViewModel.m */; };
+		FB2ED1ED21944E3700461C9A /* MRCLViewModelServicesImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2ED1EC21944E3700461C9A /* MRCLViewModelServicesImpl.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		317C69558C61EE2ED0B3EA85 /* Pods-MVVMReactiveCocoaLearn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVMReactiveCocoaLearn.release.xcconfig"; path = "Pods/Target Support Files/Pods-MVVMReactiveCocoaLearn/Pods-MVVMReactiveCocoaLearn.release.xcconfig"; sourceTree = "<group>"; };
+		C9F3C1A806AF3FF9A4C003A9 /* Pods-MVVMReactiveCocoaLearn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVMReactiveCocoaLearn.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MVVMReactiveCocoaLearn/Pods-MVVMReactiveCocoaLearn.debug.xcconfig"; sourceTree = "<group>"; };
+		D655EA0BCBF1F01725CAE4F8 /* libPods-MVVMReactiveCocoaLearn.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MVVMReactiveCocoaLearn.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB2ED1B4219332A200461C9A /* MVVMReactiveCocoaLearn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVVMReactiveCocoaLearn.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		FB2ED1B7219332A200461C9A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		FB2ED1B8219332A200461C9A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		FB2ED1BA219332A200461C9A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		FB2ED1BB219332A300461C9A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		FB2ED1BE219332A300461C9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -26,6 +33,25 @@
 		FB2ED1C3219332A400461C9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FB2ED1C5219332A400461C9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FB2ED1C6219332A400461C9A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FB2ED1CD219449B900461C9A /* MRCLAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MRCLAppDelegate.h; sourceTree = "<group>"; };
+		FB2ED1CE219449B900461C9A /* MRCLAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MRCLAppDelegate.m; sourceTree = "<group>"; };
+		FB2ED1D121944B9A00461C9A /* MVVMReactiveCocoaLearn-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MVVMReactiveCocoaLearn-Prefix.pch"; sourceTree = "<group>"; };
+		FB2ED1D321944C2700461C9A /* SSKeychain+MRCLUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SSKeychain+MRCLUtil.h"; sourceTree = "<group>"; };
+		FB2ED1D421944C2700461C9A /* SSKeychain+MRCLUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "SSKeychain+MRCLUtil.m"; sourceTree = "<group>"; };
+		FB2ED1D621944C6800461C9A /* MRCLConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MRCLConfig.h; sourceTree = "<group>"; };
+		FB2ED1D721944C9000461C9A /* MRCTConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MRCTConstant.h; sourceTree = "<group>"; };
+		FB2ED1DC21944CF200461C9A /* MRCLRepositoryService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MRCLRepositoryService.h; sourceTree = "<group>"; };
+		FB2ED1DD21944D1300461C9A /* MRCLAppStoreService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MRCLAppStoreService.h; sourceTree = "<group>"; };
+		FB2ED1DE21944D2C00461C9A /* MRCLRepositoryServiceImpl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MRCLRepositoryServiceImpl.h; sourceTree = "<group>"; };
+		FB2ED1DF21944D2C00461C9A /* MRCLRepositoryServiceImpl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MRCLRepositoryServiceImpl.m; sourceTree = "<group>"; };
+		FB2ED1E121944D6900461C9A /* MRCLAppStoreServiceImpl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MRCLAppStoreServiceImpl.h; sourceTree = "<group>"; };
+		FB2ED1E221944D6900461C9A /* MRCLAppStoreServiceImpl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MRCLAppStoreServiceImpl.m; sourceTree = "<group>"; };
+		FB2ED1E621944DC700461C9A /* MRCLNavigationProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MRCLNavigationProtocol.h; sourceTree = "<group>"; };
+		FB2ED1E721944DED00461C9A /* MRCLViewModelServices.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MRCLViewModelServices.h; sourceTree = "<group>"; };
+		FB2ED1E821944E2000461C9A /* MRCLViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MRCLViewModel.h; sourceTree = "<group>"; };
+		FB2ED1E921944E2000461C9A /* MRCLViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MRCLViewModel.m; sourceTree = "<group>"; };
+		FB2ED1EB21944E3700461C9A /* MRCLViewModelServicesImpl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MRCLViewModelServicesImpl.h; sourceTree = "<group>"; };
+		FB2ED1EC21944E3700461C9A /* MRCLViewModelServicesImpl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MRCLViewModelServicesImpl.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +59,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27F2A5754FD291894679F3B7 /* libPods-MVVMReactiveCocoaLearn.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		359D54DF1A3F57171C8F2799 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D655EA0BCBF1F01725CAE4F8 /* libPods-MVVMReactiveCocoaLearn.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3B73FDE59EE1F8AA8E25FD6C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C9F3C1A806AF3FF9A4C003A9 /* Pods-MVVMReactiveCocoaLearn.debug.xcconfig */,
+				317C69558C61EE2ED0B3EA85 /* Pods-MVVMReactiveCocoaLearn.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		FB2ED1AB219332A200461C9A = {
 			isa = PBXGroup;
 			children = (
 				FB2ED1B6219332A200461C9A /* MVVMReactiveCocoaLearn */,
 				FB2ED1B5219332A200461C9A /* Products */,
+				3B73FDE59EE1F8AA8E25FD6C /* Pods */,
+				359D54DF1A3F57171C8F2799 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,17 +104,66 @@
 		FB2ED1B6219332A200461C9A /* MVVMReactiveCocoaLearn */ = {
 			isa = PBXGroup;
 			children = (
-				FB2ED1B7219332A200461C9A /* AppDelegate.h */,
-				FB2ED1B8219332A200461C9A /* AppDelegate.m */,
+				FB2ED1D221944C0200461C9A /* Util */,
+				FB2ED1D821944CA300461C9A /* Model */,
+				FB2ED1E421944D8D00461C9A /* ViewModel */,
 				FB2ED1BA219332A200461C9A /* ViewController.h */,
 				FB2ED1BB219332A300461C9A /* ViewController.m */,
+				FB2ED1CD219449B900461C9A /* MRCLAppDelegate.h */,
+				FB2ED1CE219449B900461C9A /* MRCLAppDelegate.m */,
 				FB2ED1BD219332A300461C9A /* Main.storyboard */,
 				FB2ED1C0219332A400461C9A /* Assets.xcassets */,
 				FB2ED1C2219332A400461C9A /* LaunchScreen.storyboard */,
 				FB2ED1C5219332A400461C9A /* Info.plist */,
 				FB2ED1C6219332A400461C9A /* main.m */,
+				FB2ED1D121944B9A00461C9A /* MVVMReactiveCocoaLearn-Prefix.pch */,
 			);
 			path = MVVMReactiveCocoaLearn;
+			sourceTree = "<group>";
+		};
+		FB2ED1D221944C0200461C9A /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				FB2ED1D321944C2700461C9A /* SSKeychain+MRCLUtil.h */,
+				FB2ED1D421944C2700461C9A /* SSKeychain+MRCLUtil.m */,
+				FB2ED1D621944C6800461C9A /* MRCLConfig.h */,
+				FB2ED1D721944C9000461C9A /* MRCTConstant.h */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		FB2ED1D821944CA300461C9A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FB2ED1DC21944CF200461C9A /* MRCLRepositoryService.h */,
+				FB2ED1DD21944D1300461C9A /* MRCLAppStoreService.h */,
+				FB2ED1DE21944D2C00461C9A /* MRCLRepositoryServiceImpl.h */,
+				FB2ED1DF21944D2C00461C9A /* MRCLRepositoryServiceImpl.m */,
+				FB2ED1E121944D6900461C9A /* MRCLAppStoreServiceImpl.h */,
+				FB2ED1E221944D6900461C9A /* MRCLAppStoreServiceImpl.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FB2ED1E421944D8D00461C9A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FB2ED1E521944DB500461C9A /* BaseClass */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FB2ED1E521944DB500461C9A /* BaseClass */ = {
+			isa = PBXGroup;
+			children = (
+				FB2ED1E621944DC700461C9A /* MRCLNavigationProtocol.h */,
+				FB2ED1E721944DED00461C9A /* MRCLViewModelServices.h */,
+				FB2ED1E821944E2000461C9A /* MRCLViewModel.h */,
+				FB2ED1E921944E2000461C9A /* MRCLViewModel.m */,
+				FB2ED1EB21944E3700461C9A /* MRCLViewModelServicesImpl.h */,
+				FB2ED1EC21944E3700461C9A /* MRCLViewModelServicesImpl.m */,
+			);
+			path = BaseClass;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -78,6 +173,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FB2ED1CA219332A400461C9A /* Build configuration list for PBXNativeTarget "MVVMReactiveCocoaLearn" */;
 			buildPhases = (
+				9895E413145B9716D605D684 /* [CP] Check Pods Manifest.lock */,
 				FB2ED1B0219332A200461C9A /* Sources */,
 				FB2ED1B1219332A200461C9A /* Frameworks */,
 				FB2ED1B2219332A200461C9A /* Resources */,
@@ -136,14 +232,44 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		9895E413145B9716D605D684 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MVVMReactiveCocoaLearn-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FB2ED1B0219332A200461C9A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB2ED1CF219449B900461C9A /* MRCLAppDelegate.m in Sources */,
+				FB2ED1D521944C2700461C9A /* SSKeychain+MRCLUtil.m in Sources */,
 				FB2ED1BC219332A300461C9A /* ViewController.m in Sources */,
+				FB2ED1E021944D2C00461C9A /* MRCLRepositoryServiceImpl.m in Sources */,
 				FB2ED1C7219332A400461C9A /* main.m in Sources */,
-				FB2ED1B9219332A200461C9A /* AppDelegate.m in Sources */,
+				FB2ED1E321944D6900461C9A /* MRCLAppStoreServiceImpl.m in Sources */,
+				FB2ED1ED21944E3700461C9A /* MRCLViewModelServicesImpl.m in Sources */,
+				FB2ED1EA21944E2000461C9A /* MRCLViewModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,6 +336,8 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MVVMReactiveCocoaLearn/MVVMReactiveCocoaLearn-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -267,6 +395,8 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MVVMReactiveCocoaLearn/MVVMReactiveCocoaLearn-Prefix.pch";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -283,11 +413,13 @@
 		};
 		FB2ED1CB219332A400461C9A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9F3C1A806AF3FF9A4C003A9 /* Pods-MVVMReactiveCocoaLearn.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G3Y4Q83FQK;
 				INFOPLIST_FILE = MVVMReactiveCocoaLearn/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -300,11 +432,13 @@
 		};
 		FB2ED1CC219332A400461C9A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 317C69558C61EE2ED0B3EA85 /* Pods-MVVMReactiveCocoaLearn.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G3Y4Q83FQK;
 				INFOPLIST_FILE = MVVMReactiveCocoaLearn/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
