@@ -7,6 +7,9 @@
 //
 
 #import "MRCLNavigationControllerStack.h"
+#import "MRCLRouter.h"
+#import "MRCLNavigationController.h"
+#import "MRCLTabBarController.h"
 
 @interface MRCLNavigationControllerStack () <UINavigationControllerDelegate>
 @property (nonatomic, strong) id<MRCLViewModelServices> services;
@@ -25,8 +28,42 @@
     return self;
 }
 
-- (void)registerNavigationHooks {
+- (void)pushNavigationController:(UINavigationController *)navigationController {
+    if ([self.navigationControllers containsObject:navigationController]) return;
+    navigationController.delegate = self;
+    [self.navigationControllers addObject:navigationController];
+}
 
+- (UINavigationController *)popNavigationController {
+    UINavigationController *navigationController = self.navigationControllers.lastObject;
+    [self.navigationControllers removeLastObject];
+    return navigationController;
+}
+
+- (UINavigationController *)topNavigationController {
+    return self.navigationControllers.lastObject;
+}
+
+- (void)registerNavigationHooks {
+    @weakify(self)
+    
+    [[(NSObject *)self.services
+      rac_signalForSelector:@selector(resetRootViewModel:)]
+     subscribeNext:^(RACTuple *tuple) {
+         @strongify(self)
+         [self.navigationControllers removeAllObjects];
+
+         UIViewController *viewController = (UIViewController *)[MRCLRouter.sharedInstance viewControllerForViewModel:tuple.first];
+
+         if (![viewController isKindOfClass:[UINavigationController class]] &&
+             ![viewController isKindOfClass:[MRCLTabBarController class]]) {
+             viewController = [[MRCLNavigationController alloc] initWithRootViewController:viewController];
+             [self pushNavigationController:(UINavigationController *)viewController];
+         }
+
+         MRCLSharedAppDelegate.window.rootViewController = viewController;
+         
+     }];
 }
 
 #pragma mark - UINavigationControllerDelegate

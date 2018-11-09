@@ -14,6 +14,7 @@
 
 #ifdef __OBJC__
     #import <ReactiveCocoa/ReactiveCocoa.h>
+    #import <ReactiveCocoa/RACEXTScope.h>
     #import <OctoKit/OctoKit.h>
     #import "SSKeychain.h"
     #import "SSKeychain+MRCLUtil.h"
@@ -22,7 +23,8 @@
     #import <Mantle/Mantle.h>
     #import "MRCTConstant.h"
     #import "MRCLViewModelServices.h"
-
+    #import "MRCLAppDelegate.h"
+    #import "MRCLViewModelServices.h"
 #endif
 
 #endif /* MVVMReactiveCocoaLearn_Prefix_pch */

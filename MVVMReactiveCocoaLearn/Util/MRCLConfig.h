@@ -9,6 +9,12 @@
 #ifndef MRCLConfig_h
 #define MRCLConfig_h
 
+///------------
+/// AppDelegate
+///------------
+
+#define MRCLSharedAppDelegate ((MRCLAppDelegate *)[UIApplication sharedApplication].delegate)
+
 ///-----------
 /// SSKeychain
 ///-----------

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MRCLNavigationControllerStack.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -14,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// The window of current application.
 @property (nonatomic, strong) UIWindow *window;
+@property (nonatomic, strong, readonly) MRCLNavigationControllerStack *navigationControllerStack;
 
 @end
 
