@@ -19,6 +19,7 @@
 		FB2ED1E321944D6900461C9A /* MRCLAppStoreServiceImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2ED1E221944D6900461C9A /* MRCLAppStoreServiceImpl.m */; };
 		FB2ED1EA21944E2000461C9A /* MRCLViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2ED1E921944E2000461C9A /* MRCLViewModel.m */; };
 		FB2ED1ED21944E3700461C9A /* MRCLViewModelServicesImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2ED1EC21944E3700461C9A /* MRCLViewModelServicesImpl.m */; };
+		FB2ED1F2219484BE00461C9A /* MRCLNavigationControllerStack.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2ED1F1219484BE00461C9A /* MRCLNavigationControllerStack.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,8 @@
 		FB2ED1E921944E2000461C9A /* MRCLViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MRCLViewModel.m; sourceTree = "<group>"; };
 		FB2ED1EB21944E3700461C9A /* MRCLViewModelServicesImpl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MRCLViewModelServicesImpl.h; sourceTree = "<group>"; };
 		FB2ED1EC21944E3700461C9A /* MRCLViewModelServicesImpl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MRCLViewModelServicesImpl.m; sourceTree = "<group>"; };
+		FB2ED1F0219484BE00461C9A /* MRCLNavigationControllerStack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MRCLNavigationControllerStack.h; sourceTree = "<group>"; };
+		FB2ED1F1219484BE00461C9A /* MRCLNavigationControllerStack.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MRCLNavigationControllerStack.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +110,7 @@
 				FB2ED1D221944C0200461C9A /* Util */,
 				FB2ED1D821944CA300461C9A /* Model */,
 				FB2ED1E421944D8D00461C9A /* ViewModel */,
+				FB2ED1EE2194848800461C9A /* View */,
 				FB2ED1BA219332A200461C9A /* ViewController.h */,
 				FB2ED1BB219332A300461C9A /* ViewController.m */,
 				FB2ED1CD219449B900461C9A /* MRCLAppDelegate.h */,
@@ -136,9 +140,9 @@
 			isa = PBXGroup;
 			children = (
 				FB2ED1DC21944CF200461C9A /* MRCLRepositoryService.h */,
-				FB2ED1DD21944D1300461C9A /* MRCLAppStoreService.h */,
 				FB2ED1DE21944D2C00461C9A /* MRCLRepositoryServiceImpl.h */,
 				FB2ED1DF21944D2C00461C9A /* MRCLRepositoryServiceImpl.m */,
+				FB2ED1DD21944D1300461C9A /* MRCLAppStoreService.h */,
 				FB2ED1E121944D6900461C9A /* MRCLAppStoreServiceImpl.h */,
 				FB2ED1E221944D6900461C9A /* MRCLAppStoreServiceImpl.m */,
 			);
@@ -157,11 +161,28 @@
 			isa = PBXGroup;
 			children = (
 				FB2ED1E621944DC700461C9A /* MRCLNavigationProtocol.h */,
-				FB2ED1E721944DED00461C9A /* MRCLViewModelServices.h */,
 				FB2ED1E821944E2000461C9A /* MRCLViewModel.h */,
 				FB2ED1E921944E2000461C9A /* MRCLViewModel.m */,
+				FB2ED1E721944DED00461C9A /* MRCLViewModelServices.h */,
 				FB2ED1EB21944E3700461C9A /* MRCLViewModelServicesImpl.h */,
 				FB2ED1EC21944E3700461C9A /* MRCLViewModelServicesImpl.m */,
+			);
+			path = BaseClass;
+			sourceTree = "<group>";
+		};
+		FB2ED1EE2194848800461C9A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FB2ED1EF2194849C00461C9A /* BaseClass */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FB2ED1EF2194849C00461C9A /* BaseClass */ = {
+			isa = PBXGroup;
+			children = (
+				FB2ED1F0219484BE00461C9A /* MRCLNavigationControllerStack.h */,
+				FB2ED1F1219484BE00461C9A /* MRCLNavigationControllerStack.m */,
 			);
 			path = BaseClass;
 			sourceTree = "<group>";
@@ -266,6 +287,7 @@
 				FB2ED1D521944C2700461C9A /* SSKeychain+MRCLUtil.m in Sources */,
 				FB2ED1BC219332A300461C9A /* ViewController.m in Sources */,
 				FB2ED1E021944D2C00461C9A /* MRCLRepositoryServiceImpl.m in Sources */,
+				FB2ED1F2219484BE00461C9A /* MRCLNavigationControllerStack.m in Sources */,
 				FB2ED1C7219332A400461C9A /* main.m in Sources */,
 				FB2ED1E321944D6900461C9A /* MRCLAppStoreServiceImpl.m in Sources */,
 				FB2ED1ED21944E3700461C9A /* MRCLViewModelServicesImpl.m in Sources */,

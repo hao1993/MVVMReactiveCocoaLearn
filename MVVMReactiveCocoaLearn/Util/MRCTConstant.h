@@ -27,4 +27,11 @@
 
 typedef void (^VoidBlock)();
 
+///--------
+/// Version
+///--------
+
+#define IOS11 @available(iOS 11.0, *)
+
+
 #endif /* MRCTConstant_h */
