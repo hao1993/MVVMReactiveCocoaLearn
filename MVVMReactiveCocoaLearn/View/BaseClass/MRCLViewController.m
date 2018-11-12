@@ -7,6 +7,7 @@
 //
 
 #import "MRCLViewController.h"
+#import <YYKit.h>
 
 @interface MRCLViewController () <UIGestureRecognizerDelegate>
 @property (nonatomic, strong, readwrite) MRCLViewModel *viewModel;
@@ -45,9 +46,9 @@
     return YES;
 }
 
-//- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
-//    return [UIDevice currentDevice].isPad ? UIInterfaceOrientationMaskAll : UIInterfaceOrientationMaskPortrait;
-//}
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
+    return [UIDevice currentDevice].isPad ? UIInterfaceOrientationMaskAll : UIInterfaceOrientationMaskPortrait;
+}
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
     return UIStatusBarStyleLightContent;

@@ -8,5 +8,5 @@ target 'MVVMReactiveCocoaLearn' do
     pod 'SSKeychain', '1.2.3'
     pod 'MKNetworkKit', '0.87'
     pod 'Mantle', '~> 1.3.1'
-
+    pod 'YYKit', '~> 1.0.9'
 end
