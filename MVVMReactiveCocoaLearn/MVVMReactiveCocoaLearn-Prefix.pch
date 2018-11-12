@@ -32,6 +32,7 @@
     #import <SDWebImage/UIButton+WebCache.h>
     #import "UIImage+Octicons.h"
     #import "UIImage+MRCOcticons.h"
+    #import "IQKeyboardManager.h"
 #endif
 
 #endif /* MVVMReactiveCocoaLearn_Prefix_pch */

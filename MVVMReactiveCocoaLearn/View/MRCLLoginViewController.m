@@ -10,8 +10,9 @@
 #import "MRCLLoginViewModel.h"
 #import "TGRImageViewController.h"
 #import "TGRImageZoomAnimationController.h"
+#import "IQKeyboardReturnKeyHandler.h"
 
-@interface MRCLLoginViewController () <UIViewControllerTransitioningDelegate>
+@interface MRCLLoginViewController () <UIViewControllerTransitioningDelegate, UITextFieldDelegate>
 @property (nonatomic, strong) UIButton *avatarButton;
 @property (nonatomic, strong) UIView *userView;
 @property (nonatomic, strong) UIImageView *userImageView;
@@ -21,6 +22,7 @@
 @property (nonatomic, strong) UITextField *passTX;
 @property (nonatomic, strong) UIButton *loginButton;
 @property (nonatomic, strong, readonly) MRCLLoginViewModel *viewModel;
+@property (nonatomic, strong) IQKeyboardReturnKeyHandler *returnKeyHandler;
 @end
 
 @implementation MRCLLoginViewController
@@ -37,6 +39,16 @@
     [self.view addSubview:self.userView];
     [self.view addSubview:self.passView];
     [self.view addSubview:self.loginButton];
+    
+    self.returnKeyHandler = [[IQKeyboardReturnKeyHandler alloc] initWithViewController:self];
+    self.returnKeyHandler.lastTextFieldReturnKeyType = UIReturnKeyGo;
+    
+    @weakify(self);
+    [[self rac_signalForSelector:@selector(textFieldShouldReturn:) fromProtocol:@protocol(UITextFieldDelegate)] subscribeNext:^(RACTuple *tuple) {
+        @strongify(self);
+        if (tuple.first == self.passTX) [self.viewModel.loginCommand execute:nil];
+    }];
+    self.passTX.delegate = self;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -90,6 +102,12 @@
         
         [self presentViewController:viewController animated:YES completion:NULL];
     }];
+    
+    RAC(self.viewModel, username) = self.userTX.rac_textSignal;
+    RAC(self.viewModel, password) = self.passTX.rac_textSignal;
+    
+    
+    
 }
 
 - (void)setUpContrains {
