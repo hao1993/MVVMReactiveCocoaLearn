@@ -27,6 +27,9 @@
     #import "MRCLViewModelServices.h"
     #import <YYKit/YYKit.h>
     #import "TWMessageBarManager.h"
+    #import <Masonry/Masonry.h>
+    #import <SDWebImage/UIImageView+WebCache.h>
+    #import <SDWebImage/UIButton+WebCache.h>
 #endif
 
 #endif /* MVVMReactiveCocoaLearn_Prefix_pch */
