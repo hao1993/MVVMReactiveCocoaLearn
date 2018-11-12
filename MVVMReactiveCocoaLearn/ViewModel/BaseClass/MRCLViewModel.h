@@ -15,11 +15,11 @@ NS_ASSUME_NONNULL_BEGIN
 /// The type of the title view.
 typedef NS_ENUM(NSUInteger, MRCLTitleViewType) {
     /// System title view
-    MRCTitleViewTypeDefault,
+    MRCLTitleViewTypeDefault,
     /// Double title view
-    MRCTitleViewTypeDoubleTitle,
+    MRCLTitleViewTypeDoubleTitle,
     /// Loading title view
-    MRCTitleViewTypeLoadingTitle
+    MRCLTitleViewTypeLoadingTitle
 };
 
 @interface MRCLViewModel : NSObject

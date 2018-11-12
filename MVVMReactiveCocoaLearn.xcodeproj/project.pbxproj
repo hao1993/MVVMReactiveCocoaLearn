@@ -8,6 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		2103EF2521992BC00028BC07 /* MRCLDoubleTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2103EF2421992BC00028BC07 /* MRCLDoubleTitleView.m */; };
+		2103EF34219951260028BC07 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 2103EF28219951250028BC07 /* LICENSE */; };
+		2103EF35219951260028BC07 /* TWMessageBarManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2103EF2A219951250028BC07 /* TWMessageBarManager.m */; };
+		2103EF36219951260028BC07 /* icon-info@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2103EF2C219951250028BC07 /* icon-info@2x.png */; };
+		2103EF37219951260028BC07 /* icon-error.png in Resources */ = {isa = PBXBuildFile; fileRef = 2103EF2D219951250028BC07 /* icon-error.png */; };
+		2103EF38219951260028BC07 /* icon-info.png in Resources */ = {isa = PBXBuildFile; fileRef = 2103EF2E219951250028BC07 /* icon-info.png */; };
+		2103EF39219951260028BC07 /* icon-success@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2103EF2F219951250028BC07 /* icon-success@2x.png */; };
+		2103EF3A219951260028BC07 /* icon-error@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2103EF30219951250028BC07 /* icon-error@2x.png */; };
+		2103EF3B219951260028BC07 /* icon-success.png in Resources */ = {isa = PBXBuildFile; fileRef = 2103EF31219951250028BC07 /* icon-success.png */; };
+		2103EF3C219951260028BC07 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 2103EF33219951250028BC07 /* README.md */; };
 		21508C2421953D8E007C83B9 /* MRCLRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 21508C2321953D8E007C83B9 /* MRCLRouter.m */; };
 		21508C2721953DDE007C83B9 /* MRCLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21508C2621953DDE007C83B9 /* MRCLViewController.m */; };
 		21508C2A219560EB007C83B9 /* MRCLTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21508C29219560EB007C83B9 /* MRCLTabBarController.m */; };
@@ -32,6 +41,16 @@
 /* Begin PBXFileReference section */
 		2103EF2321992BC00028BC07 /* MRCLDoubleTitleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MRCLDoubleTitleView.h; sourceTree = "<group>"; };
 		2103EF2421992BC00028BC07 /* MRCLDoubleTitleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MRCLDoubleTitleView.m; sourceTree = "<group>"; };
+		2103EF28219951250028BC07 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		2103EF2A219951250028BC07 /* TWMessageBarManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWMessageBarManager.m; sourceTree = "<group>"; };
+		2103EF2C219951250028BC07 /* icon-info@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-info@2x.png"; sourceTree = "<group>"; };
+		2103EF2D219951250028BC07 /* icon-error.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-error.png"; sourceTree = "<group>"; };
+		2103EF2E219951250028BC07 /* icon-info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-info.png"; sourceTree = "<group>"; };
+		2103EF2F219951250028BC07 /* icon-success@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-success@2x.png"; sourceTree = "<group>"; };
+		2103EF30219951250028BC07 /* icon-error@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-error@2x.png"; sourceTree = "<group>"; };
+		2103EF31219951250028BC07 /* icon-success.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-success.png"; sourceTree = "<group>"; };
+		2103EF32219951250028BC07 /* TWMessageBarManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWMessageBarManager.h; sourceTree = "<group>"; };
+		2103EF33219951250028BC07 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		21508C2221953D8E007C83B9 /* MRCLRouter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MRCLRouter.h; sourceTree = "<group>"; };
 		21508C2321953D8E007C83B9 /* MRCLRouter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MRCLRouter.m; sourceTree = "<group>"; };
 		21508C2521953DDE007C83B9 /* MRCLViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MRCLViewController.h; sourceTree = "<group>"; };
@@ -99,6 +118,47 @@
 			path = TitleView;
 			sourceTree = "<group>";
 		};
+		2103EF26219951080028BC07 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				2103EF27219951250028BC07 /* TWMessageBarManager */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		2103EF27219951250028BC07 /* TWMessageBarManager */ = {
+			isa = PBXGroup;
+			children = (
+				2103EF29219951250028BC07 /* Classes */,
+				2103EF28219951250028BC07 /* LICENSE */,
+				2103EF33219951250028BC07 /* README.md */,
+			);
+			path = TWMessageBarManager;
+			sourceTree = "<group>";
+		};
+		2103EF29219951250028BC07 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				2103EF2B219951250028BC07 /* Icons */,
+				2103EF32219951250028BC07 /* TWMessageBarManager.h */,
+				2103EF2A219951250028BC07 /* TWMessageBarManager.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		2103EF2B219951250028BC07 /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				2103EF2C219951250028BC07 /* icon-info@2x.png */,
+				2103EF2D219951250028BC07 /* icon-error.png */,
+				2103EF2E219951250028BC07 /* icon-info.png */,
+				2103EF2F219951250028BC07 /* icon-success@2x.png */,
+				2103EF30219951250028BC07 /* icon-error@2x.png */,
+				2103EF31219951250028BC07 /* icon-success.png */,
+			);
+			path = Icons;
+			sourceTree = "<group>";
+		};
 		359D54DF1A3F57171C8F2799 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -137,6 +197,7 @@
 		FB2ED1B6219332A200461C9A /* MVVMReactiveCocoaLearn */ = {
 			isa = PBXGroup;
 			children = (
+				2103EF26219951080028BC07 /* Resource */,
 				FB2ED1D221944C0200461C9A /* Util */,
 				FB2ED1D821944CA300461C9A /* Model */,
 				FB2ED1E421944D8D00461C9A /* ViewModel */,
@@ -289,8 +350,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB2ED1C4219332A400461C9A /* LaunchScreen.storyboard in Resources */,
+				2103EF38219951260028BC07 /* icon-info.png in Resources */,
+				2103EF3A219951260028BC07 /* icon-error@2x.png in Resources */,
 				FB2ED1C1219332A400461C9A /* Assets.xcassets in Resources */,
+				2103EF3B219951260028BC07 /* icon-success.png in Resources */,
+				2103EF34219951260028BC07 /* LICENSE in Resources */,
+				2103EF37219951260028BC07 /* icon-error.png in Resources */,
 				FB2ED1BF219332A300461C9A /* Main.storyboard in Resources */,
+				2103EF36219951260028BC07 /* icon-info@2x.png in Resources */,
+				2103EF3C219951260028BC07 /* README.md in Resources */,
+				2103EF39219951260028BC07 /* icon-success@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,6 +401,7 @@
 				FB2ED1BC219332A300461C9A /* ViewController.m in Sources */,
 				21508C2721953DDE007C83B9 /* MRCLViewController.m in Sources */,
 				FB2ED1E021944D2C00461C9A /* MRCLRepositoryServiceImpl.m in Sources */,
+				2103EF35219951260028BC07 /* TWMessageBarManager.m in Sources */,
 				2103EF2521992BC00028BC07 /* MRCLDoubleTitleView.m in Sources */,
 				FB2ED1F2219484BE00461C9A /* MRCLNavigationControllerStack.m in Sources */,
 				FB2ED1C7219332A400461C9A /* main.m in Sources */,
