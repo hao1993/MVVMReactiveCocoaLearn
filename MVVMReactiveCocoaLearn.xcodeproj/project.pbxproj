@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2103EF2521992BC00028BC07 /* MRCLDoubleTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2103EF2421992BC00028BC07 /* MRCLDoubleTitleView.m */; };
 		21508C2421953D8E007C83B9 /* MRCLRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 21508C2321953D8E007C83B9 /* MRCLRouter.m */; };
 		21508C2721953DDE007C83B9 /* MRCLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21508C2621953DDE007C83B9 /* MRCLViewController.m */; };
 		21508C2A219560EB007C83B9 /* MRCLTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21508C29219560EB007C83B9 /* MRCLTabBarController.m */; };
@@ -29,6 +30,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2103EF2321992BC00028BC07 /* MRCLDoubleTitleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MRCLDoubleTitleView.h; sourceTree = "<group>"; };
+		2103EF2421992BC00028BC07 /* MRCLDoubleTitleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MRCLDoubleTitleView.m; sourceTree = "<group>"; };
 		21508C2221953D8E007C83B9 /* MRCLRouter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MRCLRouter.h; sourceTree = "<group>"; };
 		21508C2321953D8E007C83B9 /* MRCLRouter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MRCLRouter.m; sourceTree = "<group>"; };
 		21508C2521953DDE007C83B9 /* MRCLViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MRCLViewController.h; sourceTree = "<group>"; };
@@ -87,6 +90,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2103EF2221992BA60028BC07 /* TitleView */ = {
+			isa = PBXGroup;
+			children = (
+				2103EF2321992BC00028BC07 /* MRCLDoubleTitleView.h */,
+				2103EF2421992BC00028BC07 /* MRCLDoubleTitleView.m */,
+			);
+			path = TitleView;
+			sourceTree = "<group>";
+		};
 		359D54DF1A3F57171C8F2799 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -195,6 +207,7 @@
 		FB2ED1EE2194848800461C9A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2103EF2221992BA60028BC07 /* TitleView */,
 				FB2ED1EF2194849C00461C9A /* BaseClass */,
 				21508C3121956829007C83B9 /* MRCLLoginViewController.h */,
 				21508C3221956829007C83B9 /* MRCLLoginViewController.m */,
@@ -319,6 +332,7 @@
 				FB2ED1BC219332A300461C9A /* ViewController.m in Sources */,
 				21508C2721953DDE007C83B9 /* MRCLViewController.m in Sources */,
 				FB2ED1E021944D2C00461C9A /* MRCLRepositoryServiceImpl.m in Sources */,
+				2103EF2521992BC00028BC07 /* MRCLDoubleTitleView.m in Sources */,
 				FB2ED1F2219484BE00461C9A /* MRCLNavigationControllerStack.m in Sources */,
 				FB2ED1C7219332A400461C9A /* main.m in Sources */,
 				21508C2D219561A0007C83B9 /* MRCLNavigationController.m in Sources */,

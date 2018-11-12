@@ -32,7 +32,7 @@ DEPENDENCIES:
   - SSKeychain (= 1.2.3)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs:
+  https://github.com/cocoapods/specs.git:
     - AFNetworking
     - ISO8601DateFormatter
     - Mantle
@@ -56,4 +56,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: eb4e77bc32556289b5e8fc8a3009bb2e4c372d1d
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.6.0.beta.2
