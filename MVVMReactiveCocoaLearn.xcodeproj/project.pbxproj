@@ -23,6 +23,7 @@
 		214F419221995EDD00C922D1 /* TGRImageZoomAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 214F418921995EDD00C922D1 /* TGRImageZoomAnimationController.m */; };
 		214F419321995EDD00C922D1 /* TGRImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 214F418A21995EDD00C922D1 /* TGRImageViewController.xib */; };
 		214F419421995EDD00C922D1 /* UIImage+AspectFit.m in Sources */ = {isa = PBXBuildFile; fileRef = 214F418B21995EDD00C922D1 /* UIImage+AspectFit.m */; };
+		214F41972199641300C922D1 /* UIImage+MRCOcticons.m in Sources */ = {isa = PBXBuildFile; fileRef = 214F41962199641300C922D1 /* UIImage+MRCOcticons.m */; };
 		21508C2421953D8E007C83B9 /* MRCLRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 21508C2321953D8E007C83B9 /* MRCLRouter.m */; };
 		21508C2721953DDE007C83B9 /* MRCLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21508C2621953DDE007C83B9 /* MRCLViewController.m */; };
 		21508C2A219560EB007C83B9 /* MRCLTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21508C29219560EB007C83B9 /* MRCLTabBarController.m */; };
@@ -66,6 +67,8 @@
 		214F418C21995EDD00C922D1 /* TGRImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGRImageViewController.h; sourceTree = "<group>"; };
 		214F418D21995EDD00C922D1 /* UIImage+AspectFit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+AspectFit.h"; sourceTree = "<group>"; };
 		214F418E21995EDD00C922D1 /* TGRImageZoomAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGRImageZoomAnimationController.h; sourceTree = "<group>"; };
+		214F41952199641300C922D1 /* UIImage+MRCOcticons.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+MRCOcticons.h"; sourceTree = "<group>"; };
+		214F41962199641300C922D1 /* UIImage+MRCOcticons.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+MRCOcticons.m"; sourceTree = "<group>"; };
 		21508C2221953D8E007C83B9 /* MRCLRouter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MRCLRouter.h; sourceTree = "<group>"; };
 		21508C2321953D8E007C83B9 /* MRCLRouter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MRCLRouter.m; sourceTree = "<group>"; };
 		21508C2521953DDE007C83B9 /* MRCLViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MRCLViewController.h; sourceTree = "<group>"; };
@@ -265,6 +268,8 @@
 				FB2ED1D721944C9000461C9A /* MRCTConstant.h */,
 				21508C2221953D8E007C83B9 /* MRCLRouter.h */,
 				21508C2321953D8E007C83B9 /* MRCLRouter.m */,
+				214F41952199641300C922D1 /* UIImage+MRCOcticons.h */,
+				214F41962199641300C922D1 /* UIImage+MRCOcticons.m */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -342,6 +347,7 @@
 				FB2ED1B0219332A200461C9A /* Sources */,
 				FB2ED1B1219332A200461C9A /* Frameworks */,
 				FB2ED1B2219332A200461C9A /* Resources */,
+				47C5A9320086E93CB1541355 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -409,6 +415,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		47C5A9320086E93CB1541355 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MVVMReactiveCocoaLearn/Pods-MVVMReactiveCocoaLearn-resources.sh",
+				"${PODS_ROOT}/OcticonsIOS/OcticonsIOS/octicons.ttf",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/octicons.ttf",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MVVMReactiveCocoaLearn/Pods-MVVMReactiveCocoaLearn-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		9895E413145B9716D605D684 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -438,6 +466,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				214F41972199641300C922D1 /* UIImage+MRCOcticons.m in Sources */,
 				21508C2421953D8E007C83B9 /* MRCLRouter.m in Sources */,
 				214F419421995EDD00C922D1 /* UIImage+AspectFit.m in Sources */,
 				FB2ED1CF219449B900461C9A /* MRCLAppDelegate.m in Sources */,
