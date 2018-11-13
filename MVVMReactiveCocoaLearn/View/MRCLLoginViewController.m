@@ -46,7 +46,9 @@
     @weakify(self);
     [[self rac_signalForSelector:@selector(textFieldShouldReturn:) fromProtocol:@protocol(UITextFieldDelegate)] subscribeNext:^(RACTuple *tuple) {
         @strongify(self);
-        if (tuple.first == self.passTX) [self.viewModel.loginCommand execute:nil];
+        if (tuple.first == self.passTX) {
+          [self.viewModel.loginCommand execute:nil];
+        }
     }];
     self.passTX.delegate = self;
 }
@@ -93,7 +95,7 @@
         [self.avatarButton sd_setImageWithURL:avatarURL forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"default-avatar"]];
     }];
     [[self.avatarButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(UIButton *avatarButton) {
-        @strongify(self);
+        @strongify(self)
         MRCLSharedAppDelegate.window.backgroundColor = [UIColor blackColor];
         TGRImageViewController *viewController = [[TGRImageViewController alloc] initWithImage:[avatarButton imageForState:UIControlStateNormal]];
         
@@ -106,7 +108,17 @@
     RAC(self.viewModel, username) = self.userTX.rac_textSignal;
     RAC(self.viewModel, password) = self.passTX.rac_textSignal;
     
-    
+    [[[RACSignal merge:@[self.viewModel.loginCommand.executing, self.viewModel.exchangeTokenCommand.executing]] doNext:^(id x) {
+        @strongify(self)
+        [self.view endEditing:YES];
+    }] subscribeNext:^(NSNumber *executing) {
+        @strongify(self)
+        if (executing.boolValue) {
+            [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES].labelText = @"Logging in ...";
+        } else {
+            [MBProgressHUD hideHUDForView:self.navigationController.view animated:YES];
+        }
+    }];
     
 }
 

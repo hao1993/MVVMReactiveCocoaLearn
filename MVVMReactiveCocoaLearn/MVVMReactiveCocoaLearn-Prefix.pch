@@ -33,6 +33,7 @@
     #import "UIImage+Octicons.h"
     #import "UIImage+MRCOcticons.h"
     #import "IQKeyboardManager.h"
+    #import "MBProgressHUD.h"
 #endif
 
 #endif /* MVVMReactiveCocoaLearn_Prefix_pch */

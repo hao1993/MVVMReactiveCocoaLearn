@@ -12,4 +12,5 @@ target 'MVVMReactiveCocoaLearn' do
     pod 'Masonry', '~> 1.1.0'
     pod 'OcticonsIOS', :git => 'https://github.com/jacksonh/OcticonsIOS.git', :commit => '4bd3b21'
     pod 'IQKeyboardManager', '3.2.0.3'
+    pod 'MBProgressHUD', '0.9.2'
 end

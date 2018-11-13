@@ -22,6 +22,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
+    [self configureKeyboardManager];
+    
     self.services = [[MRCLViewModelServicesImpl alloc] init];
     self.navigationControllerStack = [[MRCLNavigationControllerStack alloc] initWithServices:self.services];
 
@@ -46,6 +48,13 @@
 //    } else {
         return [[MRCLLoginViewModel alloc] initWithServices:self.services params:nil];
 //    }
+}
+
+#pragma mark - Application configuration
+
+- (void)configureKeyboardManager {
+    IQKeyboardManager.sharedManager.enableAutoToolbar = NO;
+    IQKeyboardManager.sharedManager.shouldResignOnTouchOutside = YES;
 }
 
 @end
