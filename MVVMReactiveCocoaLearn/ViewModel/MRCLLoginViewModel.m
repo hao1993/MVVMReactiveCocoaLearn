@@ -22,6 +22,10 @@
 - (void)initialize {
     [super initialize];
     
+    self.validLoginSignal = [[RACSignal combineLatest:@[RACObserve(self, username), RACObserve(self, password)] reduce:^(NSString *username, NSString *password){
+        return @(username.length > 0 && password.length > 0);
+    }] distinctUntilChanged];
+    
     @weakify(self)
     void (^doNext)(OCTClient *) = ^(OCTClient *authenticatedClient) {
         @strongify(self)
@@ -50,33 +54,33 @@
                 doNext:doNext];
     }];
     
-//    self.exchangeTokenCommand = [[RACCommand alloc] initWithSignalBlock:^(NSString *code) {
-//        OCTClient *client = [[OCTClient alloc] initWithServer:[OCTServer dotComServer]];
-//        return [[[[[client
-//                    exchangeAccessTokenWithCode:code]
-//                   doNext:^(OCTAccessToken *accessToken) {
-//                       [client setValue:accessToken.token forKey:@"token"];
-//                   }]
-//                  flattenMap:^(id value) {
-//                      return [[client
-//                               fetchUserInfo]
-//                              doNext:^(OCTUser *user) {
-//                                  NSMutableDictionary *mutableDictionary = [[NSMutableDictionary alloc] init];
-//
-//                                  [mutableDictionary addEntriesFromDictionary:user.dictionaryValue];
-//
-//                                  if (user.rawLogin.length == 0) {
-//                                      mutableDictionary[@keypath(user.rawLogin)] = user.login;
-//                                  }
-//
-//                                  user = [OCTUser modelWithDictionary:mutableDictionary error:NULL];
-//
-//                                  [client setValue:user forKey:@"user"];
-//                              }];
-//                  }]
-//                 mapReplace:client]
-//                doNext:doNext];
-//    }];
+    self.exchangeTokenCommand = [[RACCommand alloc] initWithSignalBlock:^(NSString *code) {
+        OCTClient *client = [[OCTClient alloc] initWithServer:[OCTServer dotComServer]];
+        return [[[[[client
+                    exchangeAccessTokenWithCode:code]
+                   doNext:^(OCTAccessToken *accessToken) {
+                       [client setValue:accessToken.token forKey:@"token"];
+                   }]
+                  flattenMap:^(id value) {
+                      return [[client
+                               fetchUserInfo]
+                              doNext:^(OCTUser *user) {
+                                  NSMutableDictionary *mutableDictionary = [[NSMutableDictionary alloc] init];
+
+                                  [mutableDictionary addEntriesFromDictionary:user.dictionaryValue];
+
+                                  if (user.rawLogin.length == 0) {
+                                      mutableDictionary[@keypath(user.rawLogin)] = user.login;
+                                  }
+
+                                  user = [OCTUser modelWithDictionary:mutableDictionary error:NULL];
+
+                                  [client setValue:user forKey:@"user"];
+                              }];
+                  }]
+                 mapReplace:client]
+                doNext:doNext];
+    }];
 }
 
 - (void)setUsername:(NSString *)username {

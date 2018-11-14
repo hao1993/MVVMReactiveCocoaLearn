@@ -39,7 +39,9 @@
     [self.view addSubview:self.userView];
     [self.view addSubview:self.passView];
     [self.view addSubview:self.loginButton];
-    
+    [self.view addSubview:self.userTX];
+    [self.view addSubview:self.passTX];
+
     self.returnKeyHandler = [[IQKeyboardReturnKeyHandler alloc] initWithViewController:self];
     self.returnKeyHandler.lastTextFieldReturnKeyType = UIReturnKeyGo;
     
@@ -107,6 +109,7 @@
     
     RAC(self.viewModel, username) = self.userTX.rac_textSignal;
     RAC(self.viewModel, password) = self.passTX.rac_textSignal;
+    RAC(self.loginButton, enabled) = self.viewModel.validLoginSignal;
     
     [[[RACSignal merge:@[self.viewModel.loginCommand.executing, self.viewModel.exchangeTokenCommand.executing]] doNext:^(id x) {
         @strongify(self)
@@ -120,6 +123,10 @@
         }
     }];
     
+    [[self.loginButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
+        @strongify(self);
+        [self.viewModel.loginCommand execute:nil];
+    }];
 }
 
 - (void)setUpContrains {
@@ -139,9 +146,10 @@
         make.centerY.equalTo(self.userView.mas_centerY);
     }];
     [self.userTX mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.userImageView.mas_right).offset(10);
-        make.right.equalTo(self.userView.mas_right).offset(-10);
-        make.top.and.bottom.equalTo(self.userView);
+        make.left.equalTo(self.view).offset(43);
+        make.right.equalTo(self.view.mas_right).offset(-10);
+        make.top.equalTo(self.avatarButton.mas_bottom).offset(50);
+        make.height.equalTo(@(50));
     }];
     [self.passView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.and.right.equalTo(self.view);
@@ -154,9 +162,10 @@
         make.centerY.equalTo(self.passView.mas_centerY);
     }];
     [self.passTX mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.passImageView.mas_right).offset(10);
-        make.right.equalTo(self.passView.mas_right).offset(-10);
-        make.top.and.bottom.equalTo(self.passView);
+        make.left.equalTo(self.view).offset(43);
+        make.right.equalTo(self.view.mas_right).offset(-10);
+        make.top.equalTo(self.userTX.mas_bottom).offset(0);
+        make.height.equalTo(@(50));
     }];
     [self.loginButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.view).offset(15);
@@ -184,7 +193,6 @@
         _userView.backgroundColor = UIColor.whiteColor;
         
         [_userView addSubview:self.userImageView];
-        [_userView addSubview:self.userTX];
     }
     return _userView;
 }
@@ -212,7 +220,6 @@
         _passView.backgroundColor = UIColor.whiteColor;
         
         [_passView addSubview:self.passImageView];
-        [_passView addSubview:self.passTX];
     }
     return _passView;
 }
