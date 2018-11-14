@@ -45,7 +45,8 @@
     self.loginCommand = [[RACCommand alloc] initWithSignalBlock:^(NSString *oneTimePassword) {
         @strongify(self)
         OCTUser *user = [OCTUser userWithRawLogin:self.username server:OCTServer.dotComServer];
-        return [[OCTClient signInAsUser:user password:self.password oneTimePassword:oneTimePassword scopes:OCTClientAuthorizationScopesUser | OCTClientAuthorizationScopesRepository]
+        return [[OCTClient
+                 signInAsUser:user password:self.password oneTimePassword:oneTimePassword scopes:OCTClientAuthorizationScopesUser | OCTClientAuthorizationScopesRepository note:nil noteURL:nil fingerprint:nil]
                 doNext:doNext];
     }];
     

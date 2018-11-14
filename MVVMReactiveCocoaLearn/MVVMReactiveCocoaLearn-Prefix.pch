@@ -14,7 +14,6 @@
 
 #ifdef __OBJC__
     #import <ReactiveCocoa/ReactiveCocoa.h>
-    #import <ReactiveCocoa/RACEXTScope.h>
     #import <OctoKit/OctoKit.h>
     #import "SSKeychain.h"
     #import "SSKeychain+MRCLUtil.h"
