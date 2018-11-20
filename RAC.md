@@ -26,7 +26,7 @@
 
   subscribe	认购;认捐，捐赠;签署，题词，署名;订阅，订购
 
-  RACSequence  顺序;[数]数列，序列;	
+  RACSequence  序列	
 
   RACStream   河流，小河，川，溪
 

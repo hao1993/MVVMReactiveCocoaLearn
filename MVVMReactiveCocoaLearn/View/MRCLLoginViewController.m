@@ -123,6 +123,36 @@
         }
     }];
     
+    [[RACSignal merge:@[self.viewModel.loginCommand.errors, self.viewModel.exchangeTokenCommand.errors]] subscribeNext:^(NSError *error) {
+        @strongify(self);
+        if ([error.domain isEqualToString:OCTClientErrorDomain] && error.code == OCTClientErrorAuthenticationFailed) {
+            MRCError(@"Incorrect username or password");
+        } else if ([error.domain isEqual:OCTClientErrorDomain] && error.code == OCTClientErrorTwoFactorAuthenticationOneTimePasswordRequired) {
+            NSString *message = @"Please enter the 2FA code you received via SMS or read from an authenticator app";
+            
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:MRC_ALERT_TITLE
+                                                                                     message:message
+                                                                              preferredStyle:UIAlertControllerStyleAlert];
+            
+            [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+                textField.returnKeyType = UIReturnKeyGo;
+                textField.placeholder = @"2FA code";
+                textField.secureTextEntry = YES;
+            }];
+            
+            [alertController addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:NULL]];
+            
+            [alertController addAction:[UIAlertAction actionWithTitle:@"Login" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+                @strongify(self)
+                [self.viewModel.loginCommand execute:[alertController.textFields.firstObject text]];
+            }]];
+            
+            [self presentViewController:alertController animated:YES completion:NULL];
+        } else {
+            MRCError(error.localizedDescription);
+        }
+    }];
+    
     [[self.loginButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
         @strongify(self);
         [self.viewModel.loginCommand execute:nil];

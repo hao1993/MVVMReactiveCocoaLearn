@@ -22,6 +22,12 @@
 - (void)initialize {
     [super initialize];
     
+//    RAC(self, avatarURL) = [[RACObserve(self, username)
+//                             map:^(NSString *username) {
+//                                 return [[OCTUser mrc_fetchUserWithRawLogin:username] avatarURL];
+//                             }]
+//                            distinctUntilChanged];
+    
     self.validLoginSignal = [[RACSignal combineLatest:@[RACObserve(self, username), RACObserve(self, password)] reduce:^(NSString *username, NSString *password){
         return @(username.length > 0 && password.length > 0);
     }] distinctUntilChanged];
@@ -29,6 +35,8 @@
     @weakify(self)
     void (^doNext)(OCTClient *) = ^(OCTClient *authenticatedClient) {
         @strongify(self)
+        
+        NSLog(@"Login success");
 //        [[MRCMemoryCache sharedInstance] setObject:authenticatedClient.user forKey:@"currentUser"];
 //
 //        self.services.client = authenticatedClient;
@@ -45,6 +53,8 @@
 //            [self.services resetRootViewModel:viewModel];
 //        });
     };
+    
+    [OCTClient setClientID:MRC_CLIENT_ID clientSecret:MRC_CLIENT_SECRET];
     
     self.loginCommand = [[RACCommand alloc] initWithSignalBlock:^(NSString *oneTimePassword) {
         @strongify(self)
