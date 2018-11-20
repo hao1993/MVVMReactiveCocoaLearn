@@ -37,7 +37,7 @@
 - (NSDictionary *)viewModelViewMappings {
     return @{
              @"MRCLLoginViewModel": @"MRCLLoginViewController",
-             
+             @"MRCLHomepageViewModel": @"MRCLHomepageViewController"
              };
 }
 
