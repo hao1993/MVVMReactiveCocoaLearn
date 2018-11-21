@@ -45,7 +45,7 @@
 	[paragraphStyle setLineBreakMode:NSLineBreakByWordWrapping];
 
 	[textContent drawInRect:textRect withAttributes:@{
-        NSFontAttributeName:            [UIFont systemFontOfSize:15],
+        NSFontAttributeName:            font,
 		NSParagraphStyleAttributeName:	paragraphStyle,
 		NSForegroundColorAttributeName:	iconColor,
 	}];

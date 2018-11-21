@@ -7,6 +7,7 @@
 //
 
 #import "MRCLLoginViewModel.h"
+#import "MRCLHomepageViewModel.h"
 
 @interface MRCLLoginViewModel ()
 @property (nonatomic, copy, readwrite) NSURL *avatarURL;
@@ -48,10 +49,10 @@
 //        SSKeychain.password = self.password;
 //        SSKeychain.accessToken = authenticatedClient.token;
 //
-//        MRCHomepageViewModel *viewModel = [[MRCHomepageViewModel alloc] initWithServices:self.services params:nil];
-//        dispatch_async(dispatch_get_main_queue(), ^{
-//            [self.services resetRootViewModel:viewModel];
-//        });
+        MRCLHomepageViewModel *viewModel = [[MRCLHomepageViewModel alloc] initWithServices:self.services params:nil];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.services resetRootViewModel:viewModel];
+        });
     };
     
     [OCTClient setClientID:MRC_CLIENT_ID clientSecret:MRC_CLIENT_SECRET];
