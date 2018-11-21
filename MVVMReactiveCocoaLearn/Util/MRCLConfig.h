@@ -19,8 +19,8 @@
 /// Client Info
 ///------------
 
-#define MRC_CLIENT_ID     @"ef5834ea86b53233dc41"
-#define MRC_CLIENT_SECRET @"6eea860464609635567d001b1744a052f8568a99"
+#define MRC_CLIENT_ID     @"710bab8359c280f2f8e6"
+#define MRC_CLIENT_SECRET @"8db7009b94d0e2b30d24689c4b5f71591b8b7922"
 
 ///-----------
 /// SSKeychain
