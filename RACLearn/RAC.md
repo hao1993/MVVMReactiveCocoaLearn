@@ -24,7 +24,7 @@
 
   RACDisposable  〈美口〉使用后随即抛掉的东西（尤指容器等）
 
-  subscribe	认购;认捐，捐赠;签署，题词，署名;订阅，订购
+  subscribe	订阅
 
   RACSequence  序列	
 

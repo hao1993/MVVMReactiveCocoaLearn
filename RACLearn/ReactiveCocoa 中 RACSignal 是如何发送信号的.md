@@ -375,3 +375,206 @@ RACDisposable *innerDisposable = self.didSubscribe(subscriber);
 innerSubscriber是RACSubscriber，调用sendNext的时候会先把自己的self.next闭包copy一份，再调用，而且整个过程还是线程安全的，用@synchronized保护着。最终订阅者的闭包在这里被调用。
 
 sendError和sendCompleted也都是同理。
+
+#### 三. RACSignal操作的核心bind实现
+
+在RACSignal的源码里面包含了两个基本操作，concat和zipWith。不过在分析这两个操作之前，先来分析一下更加核心的一个函数，bind操作。
+
+先来说说bind函数的作用：
+
+1. 会订阅原始的信号。
+2. 任何时刻原始信号发送一个值，都会绑定的block转换一次。
+3. 一旦绑定的block转换了值变成信号，就立即订阅，并把值发给订阅者subscriber。
+4. 一旦绑定的block要终止绑定，原始的信号就complete。
+5. 当所有的信号都complete，发送completed信号给订阅者subscriber。
+6. 如果中途信号出现了任何error，都要把这个错误发送给subscriber
+
+为了弄清楚bind函数究竟做了什么，写出测试代码：
+
+```objectivec
+RACSignal *signal = [RACSignal createSignal:
+                         ^RACDisposable *(id<RACSubscriber> subscriber)
+    {
+        [subscriber sendNext:@1];
+        [subscriber sendNext:@2];
+        [subscriber sendNext:@3];
+        [subscriber sendCompleted];
+        return [RACDisposable disposableWithBlock:^{
+            NSLog(@"signal dispose");
+        }];
+    }];
+    
+    RACSignal *bindSignal = [signal bind:^RACStreamBindBlock{
+        return ^RACSignal *(NSNumber *value, BOOL *stop){
+            value = @(value.integerValue * 2);
+            return [RACSignal return:value];
+        };
+    }];
+    
+    [bindSignal subscribeNext:^(id x) {
+        NSLog(@"subscribe value = %@", x);
+    }];
+```
+
+由于前面第一章节详细讲解了RACSignal的创建和订阅的全过程，这个也为了方法讲解，创建RACDynamicSignal，RACCompoundDisposable，RACPassthroughSubscriber这些都略过，这里着重分析一下bind的各个闭包传递创建和订阅的过程。
+
+为了防止接下来的分析会让读者看晕，这里先把要用到的block进行编号。
+
+```objectivec
+ RACSignal *signal = [RACSignal createSignal:
+                         ^RACDisposable *(id<RACSubscriber> subscriber)
+    {
+        // block 1
+    }
+
+    RACSignal *bindSignal = [signal bind:^RACStreamBindBlock{
+        // block 2
+        return ^RACSignal *(NSNumber *value, BOOL *stop){
+            // block 3
+        };
+    }];
+
+    [bindSignal subscribeNext:^(id x) {
+        // block 4
+    }];
+
+- (RACSignal *)bind:(RACStreamBindBlock (^)(void))block {
+        // block 5
+    return [[RACSignal createSignal:^(id<RACSubscriber> subscriber) {
+        // block 6
+        RACStreamBindBlock bindingBlock = block();
+        NSMutableArray *signals = [NSMutableArray arrayWithObject:self];
+        
+        void (^completeSignal)(RACSignal *, RACDisposable *) = ^(RACSignal *signal, RACDisposable *finishedDisposable) {
+        // block 7
+        };
+        
+        void (^addSignal)(RACSignal *) = ^(RACSignal *signal) {
+        // block 8
+            RACDisposable *disposable = [signal subscribeNext:^(id x) {
+            // block 9
+            }];
+        };
+        
+        @autoreleasepool {
+            RACDisposable *bindingDisposable = [self subscribeNext:^(id x) {
+                // block 10
+                id signal = bindingBlock(x, &stop);
+                
+                @autoreleasepool {
+                    if (signal != nil) addSignal(signal);
+                    if (signal == nil || stop) {
+                        [selfDisposable dispose];
+                        completeSignal(self, selfDisposable);
+                    }
+                }
+            } error:^(NSError *error) {
+                [compoundDisposable dispose];
+                [subscriber sendError:error];
+            } completed:^{
+                @autoreleasepool {
+                    completeSignal(self, selfDisposable);
+                }
+            }];
+        }
+        return compoundDisposable;
+    }] ;
+}
+```
+
+#### 四. RACSignal基本操作concat和zipWith实现
+
+接下来再来分析RACSignal中另外2个基本操作。
+
+##### 1. concat
+
+写出测试代码：
+
+```objectivec
+RACSignal *signal = [RACSignal createSignal:
+                         ^RACDisposable *(id<RACSubscriber> subscriber)
+    {
+        [subscriber sendNext:@1];
+        [subscriber sendCompleted];
+        return [RACDisposable disposableWithBlock:^{
+            NSLog(@"signal dispose");
+        }];
+    }];
+
+
+    RACSignal *signals = [RACSignal createSignal:
+                         ^RACDisposable *(id<RACSubscriber> subscriber)
+    {
+        [subscriber sendNext:@2];
+        [subscriber sendNext:@3];
+        [subscriber sendNext:@6];
+        [subscriber sendCompleted];
+        return [RACDisposable disposableWithBlock:^{
+            NSLog(@"signal dispose");
+        }];
+    }];
+
+    RACSignal *concatSignal = [signal concat:signals];
+    
+    [concatSignal subscribeNext:^(id x) {
+        NSLog(@"subscribe value = %@", x);
+    }];
+```
+
+concat操作就是把两个信号合并起来。注意合并有先后顺序。
+
+```objectivec
+ (RACSignal *)concat:(RACSignal *)signal {
+   return [[RACSignal createSignal:^(id<RACSubscriber> subscriber) {
+    RACSerialDisposable *serialDisposable = [[RACSerialDisposable alloc] init];
+
+    RACDisposable *sourceDisposable = [self subscribeNext:^(id x) {
+     // 发送第一个信号的值
+     [subscriber sendNext:x];
+    } error:^(NSError *error) {
+     [subscriber sendError:error];
+    } completed:^{
+     // 订阅第二个信号
+     RACDisposable *concattedDisposable = [signal subscribe:subscriber];
+     serialDisposable.disposable = concattedDisposable;
+  }];
+
+    serialDisposable.disposable = sourceDisposable;
+    return serialDisposable;
+ }] setNameWithFormat:@"[%@] -concat: %@", self.name, signal];
+}
+```
+
+合并前，signal和signals分别都把各自的didSubscribe保存copy起来。
+
+合并之后，合并之后新的信号的didSubscribe会把block保存copy起来。
+
+当合并之后的信号被订阅的时候：
+
+1. 调用新的合并信号的didSubscribe。
+2. 由于是第一个信号调用的concat方法，所以block中的self是前一个信号signal。合并信号的didSubscribe会先订阅signal。
+3. 由于订阅了signal，于是开始执行signal的didSubscribe，sendNext，sendError。
+4. 当前一个信号signal发送sendCompleted之后，就会开始订阅后一个信号signals，调用signals的didSubscribe。
+5. 由于订阅了后一个信号，于是后一个信号signals开始发送sendNext，sendError，sendCompleted。
+
+这样两个信号就前后有序的拼接到了一起。
+
+这里有二点需要注意的是：
+
+1. 只有当第一个信号完成之后才能收到第二个信号的值，因为第二个信号是在第一个信号completed的闭包里面订阅的，所以第一个信号不结束，第二个信号也不会被订阅。
+2. 两个信号concat在一起之后，新的信号的结束信号在第二个信号结束的时候才结束。看上图描述，新的信号的发送长度等于前面两个信号长度之和，concat之后的新信号的结束信号也就是第二个信号的结束信号。
+
+##### 2. zipWith
+
+写出测试代码：
+
+```objectivec
+ RACSignal *concatSignal = [signal zipWith:signals];
+    
+    [concatSignal subscribeNext:^(id x) {
+        NSLog(@"subscribe value = %@", x);
+    }];
+```
+
+第一个信号依次发送的1，2，3，4的值和第二个信号依次发送的A，B，C，D的值，一一的合在了一起，就像拉链把他们拉在一起。由于5没法配对，所以拉链也拉不上了。
+
