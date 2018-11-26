@@ -1,6 +1,6 @@
 # ReactiveCocoa 中 RACSignal 是如何发送信号的
 
-#### 目录-https://halfrost.com/reactivecocoa_racsignal/
+#### 目录-<https://halfrost.com/reactivecocoa_racsignal/>
 
 - 1.什么是ReactiveCocoa？
 - 2.RAC中的核心RACSignal发送与订阅流程
@@ -376,6 +376,15 @@ innerSubscriber是RACSubscriber，调用sendNext的时候会先把自己的self.
 
 sendError和sendCompleted也都是同理。
 
+总结一下：
+
+1. RACSignal调用subscribeNext方法，新建一个RACSubscriber。
+2. 新建的RACSubscriber会copy，nextBlock，errorBlock，completedBlock存在自己的属性变量中。
+3. RACSignal的子类RACDynamicSignal调用subscribe方法。
+4. 新建RACCompoundDisposable和RACPassthroughSubscriber对象。RACPassthroughSubscriber分别保存对RACSignal，RACSubscriber，RACCompoundDisposable的引用，注意对RACSignal的引用是unsafe_unretained的。
+5. RACDynamicSignal调用didSubscribe闭包。先调用RACPassthroughSubscriber的相应的sendNext，sendError，sendCompleted方法。
+6. RACPassthroughSubscriber再去调用self.innerSubscriber，即RACSubscriber的nextBlock，errorBlock，completedBlock。注意这里调用同样是先copy一份，再调用闭包执行。
+
 #### 三. RACSignal操作的核心bind实现
 
 在RACSignal的源码里面包含了两个基本操作，concat和zipWith。不过在分析这两个操作之前，先来分析一下更加核心的一个函数，bind操作。
@@ -389,7 +398,56 @@ sendError和sendCompleted也都是同理。
 5. 当所有的信号都complete，发送completed信号给订阅者subscriber。
 6. 如果中途信号出现了任何error，都要把这个错误发送给subscriber
 
-为了弄清楚bind函数究竟做了什么，写出测试代码：
+```objectivec
+- (RACSignal *)bind:(RACStreamBindBlock (^)(void))block {
+ NSCParameterAssert(block != NULL);
+
+ return [[RACSignal createSignal:^(id<RACSubscriber> subscriber) {
+  RACStreamBindBlock bindingBlock = block();
+
+  NSMutableArray *signals = [NSMutableArray arrayWithObject:self];
+
+  RACCompoundDisposable *compoundDisposable = [RACCompoundDisposable compoundDisposable];
+
+  void (^completeSignal)(RACSignal *, RACDisposable *) = ^(RACSignal *signal, RACDisposable *finishedDisposable) { /*这里暂时省略*/ };
+  void (^addSignal)(RACSignal *) = ^(RACSignal *signal) { /*这里暂时省略*/ };
+
+  @autoreleasepool {
+   RACSerialDisposable *selfDisposable = [[RACSerialDisposable alloc] init];
+   [compoundDisposable addDisposable:selfDisposable];
+
+   RACDisposable *bindingDisposable = [self subscribeNext:^(id x) {
+    // Manually check disposal to handle synchronous errors.
+    if (compoundDisposable.disposed) return;
+
+    BOOL stop = NO;
+    id signal = bindingBlock(x, &stop);
+
+    @autoreleasepool {
+     if (signal != nil) addSignal(signal);
+     if (signal == nil || stop) {
+      [selfDisposable dispose];
+      completeSignal(self, selfDisposable);
+     }
+    }
+   } error:^(NSError *error) {
+    [compoundDisposable dispose];
+    [subscriber sendError:error];
+   } completed:^{
+    @autoreleasepool {
+     completeSignal(self, selfDisposable);
+    }
+   }];
+
+   selfDisposable.disposable = bindingDisposable;
+  }
+
+  return compoundDisposable;
+ }] setNameWithFormat:@"[%@] -bind:", self.name];
+}
+```
+
+为了弄清楚bind函数究竟做了什么，写出测试代码:
 
 ```objectivec
 RACSignal *signal = [RACSignal createSignal:
@@ -418,10 +476,11 @@ RACSignal *signal = [RACSignal createSignal:
 
 由于前面第一章节详细讲解了RACSignal的创建和订阅的全过程，这个也为了方法讲解，创建RACDynamicSignal，RACCompoundDisposable，RACPassthroughSubscriber这些都略过，这里着重分析一下bind的各个闭包传递创建和订阅的过程。
 
-为了防止接下来的分析会让读者看晕，这里先把要用到的block进行编号。
+
+为了防止接下来的分析会让读者看晕，这里先把要用到的block进行编号
 
 ```objectivec
- RACSignal *signal = [RACSignal createSignal:
+RACSignal *signal = [RACSignal createSignal:
                          ^RACDisposable *(id<RACSubscriber> subscriber)
     {
         // block 1
