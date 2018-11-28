@@ -26,8 +26,15 @@
 /// SSKeychain
 ///-----------
 
-#define MRCL_SERVICE_NAME @"yxck.RACTest"
+#define MRCL_SERVICE_NAME @"com.hao.MVVMReactiveCocoaLearn"
 #define MRCL_ACCESS_TOKEN @"AccessToken"
+#define MRCL_RAW_LOGIN    @"RawLogin"
+#define MRCL_PASSWORD     @"Password"
 
+///----------------------
+/// Persistence Directory
+///----------------------
+
+#define MRCL_DOCUMENT_DIRECTORY NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).firstObject
 
 #endif /* MRCLConfig_h */

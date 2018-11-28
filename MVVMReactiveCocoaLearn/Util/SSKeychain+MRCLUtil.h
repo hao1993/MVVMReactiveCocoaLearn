@@ -12,8 +12,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SSKeychain (MRCLUtil)
 
++ (NSString *)rawLogin;
++ (NSString *)password;
 + (NSString *)accessToken;
 
++ (BOOL)setRawLogin:(NSString *)rawLogin;
++ (BOOL)setPassword:(NSString *)password;
++ (BOOL)setAccessToken:(NSString *)accessToken;
+
++ (BOOL)deleteAccessToken;
 @end
 
 NS_ASSUME_NONNULL_END

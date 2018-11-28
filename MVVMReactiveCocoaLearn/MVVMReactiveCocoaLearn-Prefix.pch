@@ -18,6 +18,7 @@
     #import "SSKeychain.h"
     #import "SSKeychain+MRCLUtil.h"
     #import "MRCLConfig.h"
+    #import "MRCUtil.h"
     #import "MKNetworkKit.h"
     #import <Mantle/Mantle.h>
     #import "MRCTConstant.h"
@@ -33,6 +34,11 @@
     #import "UIImage+MRCOcticons.h"
     #import "IQKeyboardManager.h"
     #import "MBProgressHUD.h"
+    #import "OCTUser+MRCPersistence.h"
+    #import "FMDatabaseQueue+MRCHelper.h"
+    #import "FMDB.h"
+    #import "MRCLMemoryCache.h"
+
 #endif
 
 #endif /* MVVMReactiveCocoaLearn_Prefix_pch */

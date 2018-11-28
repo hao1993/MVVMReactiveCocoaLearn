@@ -1,4 +1,7 @@
 PODS:
+  - FMDB (2.6.2):
+    - FMDB/standard (= 2.6.2)
+  - FMDB/standard (2.6.2)
   - IQKeyboardManager (3.2.0.3)
   - Masonry (1.1.0)
   - MBProgressHUD (0.9.2)
@@ -15,6 +18,7 @@ PODS:
   - YYKit/no-arc (1.0.9)
 
 DEPENDENCIES:
+  - FMDB (= 2.6.2)
   - IQKeyboardManager (= 3.2.0.3)
   - Masonry (~> 1.1.0)
   - MBProgressHUD (= 0.9.2)
@@ -26,6 +30,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - FMDB
     - IQKeyboardManager
     - Masonry
     - MBProgressHUD
@@ -46,6 +51,7 @@ CHECKOUT OPTIONS:
     :git: https://github.com/jacksonh/OcticonsIOS.git
 
 SPEC CHECKSUMS:
+  FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
   IQKeyboardManager: 7b071d1284b47b1c0c19891a042c2c65f118fa85
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
@@ -56,6 +62,6 @@ SPEC CHECKSUMS:
   SSKeychain: 3f42991739c6c60a9cf1bbd4dff6c0d3694bcf3d
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: c77b8e264d189875da4a3498a1d0c311691c77be
+PODFILE CHECKSUM: 99b706c502fa2ccab3dc093c7341da8dc9b676e3
 
 COCOAPODS: 1.6.0.beta.2

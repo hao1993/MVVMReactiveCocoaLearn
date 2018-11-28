@@ -193,7 +193,7 @@ typedef id   (^IDBlock_id)  (id);
 /// FMDB
 ///-----
 
-#define MRC_FMDB_PATH [NSString stringWithFormat:@"%@/%@.db", MRC_DOCUMENT_DIRECTORY, MRC_APP_NAME]
+#define MRC_FMDB_PATH [NSString stringWithFormat:@"%@/%@.db", MRCL_DOCUMENT_DIRECTORY, MRC_APP_NAME]
 #define MRCLogLastError(db) NSLog(@"lastError: %@, lastErrorCode: %d, lastErrorMessage: %@", [db lastError], [db lastErrorCode], [db lastErrorMessage]);
 
 ///-------------

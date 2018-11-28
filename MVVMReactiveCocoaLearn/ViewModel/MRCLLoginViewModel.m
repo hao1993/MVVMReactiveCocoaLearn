@@ -8,6 +8,7 @@
 
 #import "MRCLLoginViewModel.h"
 #import "MRCLHomepageViewModel.h"
+#import "MRCLMemoryCache.h"
 
 @interface MRCLLoginViewModel ()
 @property (nonatomic, copy, readwrite) NSURL *avatarURL;
@@ -38,17 +39,17 @@
         @strongify(self)
         
         NSLog(@"Login success");
-//        [[MRCMemoryCache sharedInstance] setObject:authenticatedClient.user forKey:@"currentUser"];
-//
-//        self.services.client = authenticatedClient;
-//
-//        [authenticatedClient.user mrc_saveOrUpdate];
-//        [authenticatedClient.user mrc_updateRawLogin]; // The only place to update rawLogin, I hate the logic of rawLogin.
-//
-//        SSKeychain.rawLogin = authenticatedClient.user.rawLogin;
-//        SSKeychain.password = self.password;
-//        SSKeychain.accessToken = authenticatedClient.token;
-//
+        [[MRCLMemoryCache sharedInstance] setObject:authenticatedClient.user forKey:@"currentUser"];
+
+        self.services.client = authenticatedClient;
+
+        [authenticatedClient.user mrc_saveOrUpdate];
+        [authenticatedClient.user mrc_updateRawLogin]; // The only place to update rawLogin, I hate the logic of rawLogin.
+
+        SSKeychain.rawLogin = authenticatedClient.user.rawLogin;
+        SSKeychain.password = self.password;
+        SSKeychain.accessToken = authenticatedClient.token;
+
         MRCLHomepageViewModel *viewModel = [[MRCLHomepageViewModel alloc] initWithServices:self.services params:nil];
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.services resetRootViewModel:viewModel];

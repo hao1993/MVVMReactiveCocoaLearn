@@ -17,6 +17,13 @@
 		2103EF3A219951260028BC07 /* icon-error@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2103EF30219951250028BC07 /* icon-error@2x.png */; };
 		2103EF3B219951260028BC07 /* icon-success.png in Resources */ = {isa = PBXBuildFile; fileRef = 2103EF31219951250028BC07 /* icon-success.png */; };
 		2103EF3C219951260028BC07 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 2103EF33219951250028BC07 /* README.md */; };
+		2112A25321AE7F3A00A2AB3B /* MRCLMemoryCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 2112A25221AE7F3900A2AB3B /* MRCLMemoryCache.m */; };
+		2112A26221AE828D00A2AB3B /* MRCUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 2112A26121AE828D00A2AB3B /* MRCUtil.m */; };
+		2112A26521AE830E00A2AB3B /* OCTUser+MRCPersistence.m in Sources */ = {isa = PBXBuildFile; fileRef = 2112A26421AE830E00A2AB3B /* OCTUser+MRCPersistence.m */; };
+		2112A26921AE88EA00A2AB3B /* FMDatabaseQueue+MRCHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2112A26721AE88EA00A2AB3B /* FMDatabaseQueue+MRCHelper.m */; };
+		2112A27F21AE91A200A2AB3B /* update_v1_1_0.sql in Resources */ = {isa = PBXBuildFile; fileRef = 2112A27C21AE91A100A2AB3B /* update_v1_1_0.sql */; };
+		2112A28021AE91A200A2AB3B /* update_v1_2_0.sql in Resources */ = {isa = PBXBuildFile; fileRef = 2112A27D21AE91A200A2AB3B /* update_v1_2_0.sql */; };
+		2112A28121AE91A200A2AB3B /* update_v1_0_1.sql in Resources */ = {isa = PBXBuildFile; fileRef = 2112A27E21AE91A200A2AB3B /* update_v1_0_1.sql */; };
 		212BAEC821A438A400845206 /* MRCLTabBarViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 212BAEC721A438A400845206 /* MRCLTabBarViewModel.m */; };
 		212BAED721A438F600845206 /* MRCLHomepageViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 212BAED621A438F600845206 /* MRCLHomepageViewModel.m */; };
 		212BAEDA21A439E700845206 /* MRCLHomepageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 212BAED921A439E700845206 /* MRCLHomepageViewController.m */; };
@@ -239,6 +246,18 @@
 		2103EF31219951250028BC07 /* icon-success.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-success.png"; sourceTree = "<group>"; };
 		2103EF32219951250028BC07 /* TWMessageBarManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWMessageBarManager.h; sourceTree = "<group>"; };
 		2103EF33219951250028BC07 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		2112A25121AE7F3900A2AB3B /* MRCLMemoryCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MRCLMemoryCache.h; sourceTree = "<group>"; };
+		2112A25221AE7F3900A2AB3B /* MRCLMemoryCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MRCLMemoryCache.m; sourceTree = "<group>"; };
+		2112A26021AE828C00A2AB3B /* MRCUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRCUtil.h; sourceTree = "<group>"; };
+		2112A26121AE828D00A2AB3B /* MRCUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRCUtil.m; sourceTree = "<group>"; };
+		2112A26321AE830E00A2AB3B /* OCTUser+MRCPersistence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OCTUser+MRCPersistence.h"; sourceTree = "<group>"; };
+		2112A26421AE830E00A2AB3B /* OCTUser+MRCPersistence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "OCTUser+MRCPersistence.m"; sourceTree = "<group>"; };
+		2112A26621AE836100A2AB3B /* MRCPersistenceProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRCPersistenceProtocol.h; sourceTree = "<group>"; };
+		2112A26721AE88EA00A2AB3B /* FMDatabaseQueue+MRCHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FMDatabaseQueue+MRCHelper.m"; sourceTree = "<group>"; };
+		2112A26821AE88EA00A2AB3B /* FMDatabaseQueue+MRCHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FMDatabaseQueue+MRCHelper.h"; sourceTree = "<group>"; };
+		2112A27C21AE91A100A2AB3B /* update_v1_1_0.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = update_v1_1_0.sql; sourceTree = "<group>"; };
+		2112A27D21AE91A200A2AB3B /* update_v1_2_0.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = update_v1_2_0.sql; sourceTree = "<group>"; };
+		2112A27E21AE91A200A2AB3B /* update_v1_0_1.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = update_v1_0_1.sql; sourceTree = "<group>"; };
 		212BAEC621A438A400845206 /* MRCLTabBarViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MRCLTabBarViewModel.h; sourceTree = "<group>"; };
 		212BAEC721A438A400845206 /* MRCLTabBarViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MRCLTabBarViewModel.m; sourceTree = "<group>"; };
 		212BAED521A438F600845206 /* MRCLHomepageViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MRCLHomepageViewModel.h; sourceTree = "<group>"; };
@@ -393,6 +412,16 @@
 			path = Icons;
 			sourceTree = "<group>";
 		};
+		2112A26F21AE919100A2AB3B /* SQL */ = {
+			isa = PBXGroup;
+			children = (
+				2112A27E21AE91A200A2AB3B /* update_v1_0_1.sql */,
+				2112A27C21AE91A100A2AB3B /* update_v1_1_0.sql */,
+				2112A27D21AE91A200A2AB3B /* update_v1_2_0.sql */,
+			);
+			path = SQL;
+			sourceTree = "<group>";
+		};
 		214F418421995EDD00C922D1 /* Vertigo */ = {
 			isa = PBXGroup;
 			children = (
@@ -533,6 +562,10 @@
 				21508C2321953D8E007C83B9 /* MRCLRouter.m */,
 				214F41952199641300C922D1 /* UIImage+MRCOcticons.h */,
 				214F41962199641300C922D1 /* UIImage+MRCOcticons.m */,
+				2112A25121AE7F3900A2AB3B /* MRCLMemoryCache.h */,
+				2112A25221AE7F3900A2AB3B /* MRCLMemoryCache.m */,
+				2112A26021AE828C00A2AB3B /* MRCUtil.h */,
+				2112A26121AE828D00A2AB3B /* MRCUtil.m */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -540,12 +573,18 @@
 		FB2ED1D821944CA300461C9A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2112A26F21AE919100A2AB3B /* SQL */,
+				2112A26621AE836100A2AB3B /* MRCPersistenceProtocol.h */,
+				2112A26321AE830E00A2AB3B /* OCTUser+MRCPersistence.h */,
+				2112A26421AE830E00A2AB3B /* OCTUser+MRCPersistence.m */,
 				FB2ED1DC21944CF200461C9A /* MRCLRepositoryService.h */,
 				FB2ED1DE21944D2C00461C9A /* MRCLRepositoryServiceImpl.h */,
 				FB2ED1DF21944D2C00461C9A /* MRCLRepositoryServiceImpl.m */,
 				FB2ED1DD21944D1300461C9A /* MRCLAppStoreService.h */,
 				FB2ED1E121944D6900461C9A /* MRCLAppStoreServiceImpl.h */,
 				FB2ED1E221944D6900461C9A /* MRCLAppStoreServiceImpl.m */,
+				2112A26821AE88EA00A2AB3B /* FMDatabaseQueue+MRCHelper.h */,
+				2112A26721AE88EA00A2AB3B /* FMDatabaseQueue+MRCHelper.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -830,10 +869,13 @@
 				2103EF3B219951260028BC07 /* icon-success.png in Resources */,
 				2103EF34219951260028BC07 /* LICENSE in Resources */,
 				214F418F21995EDD00C922D1 /* LICENSE in Resources */,
+				2112A28121AE91A200A2AB3B /* update_v1_0_1.sql in Resources */,
+				2112A28021AE91A200A2AB3B /* update_v1_2_0.sql in Resources */,
 				214F419321995EDD00C922D1 /* TGRImageViewController.xib in Resources */,
 				2103EF37219951260028BC07 /* icon-error.png in Resources */,
 				FB2ED1BF219332A300461C9A /* Main.storyboard in Resources */,
 				2103EF36219951260028BC07 /* icon-info@2x.png in Resources */,
+				2112A27F21AE91A200A2AB3B /* update_v1_1_0.sql in Resources */,
 				2103EF3C219951260028BC07 /* README.md in Resources */,
 				2103EF39219951260028BC07 /* icon-success@2x.png in Resources */,
 			);
@@ -911,8 +953,12 @@
 				FB2ED1E021944D2C00461C9A /* MRCLRepositoryServiceImpl.m in Sources */,
 				212BAEEC21A5095300845206 /* MRCLNewsViewController.m in Sources */,
 				212BAEDA21A439E700845206 /* MRCLHomepageViewController.m in Sources */,
+				2112A26921AE88EA00A2AB3B /* FMDatabaseQueue+MRCHelper.m in Sources */,
+				2112A26221AE828D00A2AB3B /* MRCUtil.m in Sources */,
+				2112A25321AE7F3A00A2AB3B /* MRCLMemoryCache.m in Sources */,
 				2103EF35219951260028BC07 /* TWMessageBarManager.m in Sources */,
 				2103EF2521992BC00028BC07 /* MRCLDoubleTitleView.m in Sources */,
+				2112A26521AE830E00A2AB3B /* OCTUser+MRCPersistence.m in Sources */,
 				214F419121995EDD00C922D1 /* TGRImageViewController.m in Sources */,
 				FB2ED1F2219484BE00461C9A /* MRCLNavigationControllerStack.m in Sources */,
 				FB2ED1C7219332A400461C9A /* main.m in Sources */,
