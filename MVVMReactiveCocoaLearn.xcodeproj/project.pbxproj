@@ -37,6 +37,8 @@
 		212BAEF221A50A9D00845206 /* MRCLReposViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 212BAEF121A50A9D00845206 /* MRCLReposViewController.m */; };
 		212BAEF521A50B3C00845206 /* MRCLExploreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 212BAEF421A50B3C00845206 /* MRCLExploreViewController.m */; };
 		212BAEF821A50B9000845206 /* MRCLProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 212BAEF721A50B9000845206 /* MRCLProfileViewController.m */; };
+		2148A61D21AFDC6900CE2E90 /* MRCLPublicReposViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2148A61C21AFDC6900CE2E90 /* MRCLPublicReposViewController.m */; };
+		2148A62D21AFEE8700CE2E90 /* OCTRepository+MRCPersistence.m in Sources */ = {isa = PBXBuildFile; fileRef = 2148A62C21AFEE8700CE2E90 /* OCTRepository+MRCPersistence.m */; };
 		214F418F21995EDD00C922D1 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 214F418521995EDD00C922D1 /* LICENSE */; };
 		214F419021995EDD00C922D1 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 214F418621995EDD00C922D1 /* README.md */; };
 		214F419121995EDD00C922D1 /* TGRImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 214F418821995EDD00C922D1 /* TGRImageViewController.m */; };
@@ -58,6 +60,7 @@
 		21E87C8C219BFEF600E03DDF /* ReactiveCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 218DF177219BFC0F0038D3F9 /* ReactiveCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		21E87C8F219BFF0300E03DDF /* OctoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 218DF196219BFC4D0038D3F9 /* OctoKit.framework */; };
 		21E87C90219BFF0300E03DDF /* OctoKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 218DF196219BFC4D0038D3F9 /* OctoKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		21EAB8B921B0E08B008DFB43 /* MRCLUserListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21EAB8B821B0E08B008DFB43 /* MRCLUserListViewController.m */; };
 		27F2A5754FD291894679F3B7 /* libPods-MVVMReactiveCocoaLearn.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D655EA0BCBF1F01725CAE4F8 /* libPods-MVVMReactiveCocoaLearn.a */; };
 		FB2ED1BC219332A300461C9A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2ED1BB219332A300461C9A /* ViewController.m */; };
 		FB2ED1BF219332A300461C9A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB2ED1BD219332A300461C9A /* Main.storyboard */; };
@@ -284,6 +287,10 @@
 		212BAEF421A50B3C00845206 /* MRCLExploreViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MRCLExploreViewController.m; sourceTree = "<group>"; };
 		212BAEF621A50B9000845206 /* MRCLProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MRCLProfileViewController.h; sourceTree = "<group>"; };
 		212BAEF721A50B9000845206 /* MRCLProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MRCLProfileViewController.m; sourceTree = "<group>"; };
+		2148A61B21AFDC6900CE2E90 /* MRCLPublicReposViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MRCLPublicReposViewController.h; sourceTree = "<group>"; };
+		2148A61C21AFDC6900CE2E90 /* MRCLPublicReposViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MRCLPublicReposViewController.m; sourceTree = "<group>"; };
+		2148A62B21AFEE8700CE2E90 /* OCTRepository+MRCPersistence.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OCTRepository+MRCPersistence.h"; sourceTree = "<group>"; };
+		2148A62C21AFEE8700CE2E90 /* OCTRepository+MRCPersistence.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "OCTRepository+MRCPersistence.m"; sourceTree = "<group>"; };
 		214F418521995EDD00C922D1 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		214F418621995EDD00C922D1 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		214F418821995EDD00C922D1 /* TGRImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGRImageViewController.m; sourceTree = "<group>"; };
@@ -311,6 +318,8 @@
 		218DF16B219BFC0F0038D3F9 /* ReactiveCocoa.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ReactiveCocoa.xcodeproj; path = OctoKit/Carthage/Checkouts/ReactiveCocoa/ReactiveCocoa.xcodeproj; sourceTree = "<group>"; };
 		218DF17A219BFC300038D3F9 /* Mantle.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Mantle.xcodeproj; path = OctoKit/Carthage/Checkouts/Mantle/Mantle.xcodeproj; sourceTree = "<group>"; };
 		218DF189219BFC4D0038D3F9 /* OctoKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OctoKit.xcodeproj; path = OctoKit/OctoKit.xcodeproj; sourceTree = "<group>"; };
+		21EAB8B721B0E08B008DFB43 /* MRCLUserListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MRCLUserListViewController.h; sourceTree = "<group>"; };
+		21EAB8B821B0E08B008DFB43 /* MRCLUserListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MRCLUserListViewController.m; sourceTree = "<group>"; };
 		317C69558C61EE2ED0B3EA85 /* Pods-MVVMReactiveCocoaLearn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVMReactiveCocoaLearn.release.xcconfig"; path = "Pods/Target Support Files/Pods-MVVMReactiveCocoaLearn/Pods-MVVMReactiveCocoaLearn.release.xcconfig"; sourceTree = "<group>"; };
 		C9F3C1A806AF3FF9A4C003A9 /* Pods-MVVMReactiveCocoaLearn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVMReactiveCocoaLearn.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MVVMReactiveCocoaLearn/Pods-MVVMReactiveCocoaLearn.debug.xcconfig"; sourceTree = "<group>"; };
 		D655EA0BCBF1F01725CAE4F8 /* libPods-MVVMReactiveCocoaLearn.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MVVMReactiveCocoaLearn.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -575,6 +584,8 @@
 			children = (
 				2112A26F21AE919100A2AB3B /* SQL */,
 				2112A26621AE836100A2AB3B /* MRCPersistenceProtocol.h */,
+				2148A62B21AFEE8700CE2E90 /* OCTRepository+MRCPersistence.h */,
+				2148A62C21AFEE8700CE2E90 /* OCTRepository+MRCPersistence.m */,
 				2112A26321AE830E00A2AB3B /* OCTUser+MRCPersistence.h */,
 				2112A26421AE830E00A2AB3B /* OCTUser+MRCPersistence.m */,
 				FB2ED1DC21944CF200461C9A /* MRCLRepositoryService.h */,
@@ -641,6 +652,10 @@
 				212BAEF421A50B3C00845206 /* MRCLExploreViewController.m */,
 				212BAEF621A50B9000845206 /* MRCLProfileViewController.h */,
 				212BAEF721A50B9000845206 /* MRCLProfileViewController.m */,
+				2148A61B21AFDC6900CE2E90 /* MRCLPublicReposViewController.h */,
+				2148A61C21AFDC6900CE2E90 /* MRCLPublicReposViewController.m */,
+				21EAB8B721B0E08B008DFB43 /* MRCLUserListViewController.h */,
+				21EAB8B821B0E08B008DFB43 /* MRCLUserListViewController.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -938,6 +953,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				212BAEF821A50B9000845206 /* MRCLProfileViewController.m in Sources */,
+				2148A62D21AFEE8700CE2E90 /* OCTRepository+MRCPersistence.m in Sources */,
 				214F41972199641300C922D1 /* UIImage+MRCOcticons.m in Sources */,
 				21508C2421953D8E007C83B9 /* MRCLRouter.m in Sources */,
 				214F419421995EDD00C922D1 /* UIImage+AspectFit.m in Sources */,
@@ -948,6 +964,7 @@
 				FB2ED1BC219332A300461C9A /* ViewController.m in Sources */,
 				212BAEE321A4FF7B00845206 /* MRCLExploreViewModel.m in Sources */,
 				212BAEC821A438A400845206 /* MRCLTabBarViewModel.m in Sources */,
+				21EAB8B921B0E08B008DFB43 /* MRCLUserListViewController.m in Sources */,
 				21508C2721953DDE007C83B9 /* MRCLViewController.m in Sources */,
 				212BAEF221A50A9D00845206 /* MRCLReposViewController.m in Sources */,
 				FB2ED1E021944D2C00461C9A /* MRCLRepositoryServiceImpl.m in Sources */,
@@ -968,6 +985,7 @@
 				212BAEE621A500C200845206 /* MRCLProfileViewModel.m in Sources */,
 				212BAEE921A5092300845206 /* MRCLTableViewController.m in Sources */,
 				FB2ED1EA21944E2000461C9A /* MRCLViewModel.m in Sources */,
+				2148A61D21AFDC6900CE2E90 /* MRCLPublicReposViewController.m in Sources */,
 				21508C302195650D007C83B9 /* MRCLLoginViewModel.m in Sources */,
 				21508C2A219560EB007C83B9 /* MRCLTabBarController.m in Sources */,
 				212BAEEF21A509B500845206 /* MRCLSegmentedControlController.m in Sources */,
