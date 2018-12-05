@@ -22,10 +22,32 @@
     self.view.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.tableView];
     
-    OCTClient *client  = [[OCTClient alloc] init];
     
+    
+    @weakify(self);
+    RACCommand *requestCommand = [[RACCommand alloc] initWithSignalBlock:^(NSNumber *page) {
+        @strongify(self)
+        RACSignal *signal = [[self requestRemoteDataSignalWithPage:page.unsignedIntegerValue] takeUntil:self.rac_willDeallocSignal];
+        return signal;
+    }];
+    [requestCommand execute:nil];
+
+}
+
+- (RACSignal *)requestRemoteDataSignalWithPage:(NSUInteger)page {
     OCTUser *user = [OCTUser mrc_currentUser];
-    [client fetchFollowersForUser:user offset:0 perPage:1];
+    OCTClient *authenticatedClient = [OCTClient authenticatedClientWithUser:user token:[SSKeychain accessToken]];
+
+    return [[[[authenticatedClient fetchFollowersForUser:user offset:0 perPage:100]
+              take:100]
+             collect]
+            map:^(NSArray *users) {
+                for (OCTUser *user in users) {
+                    //                                 if (self.isCurrentUser) user.followingStatus = OCTUserFollowingStatusYES;
+                }
+                NSLog(@"users:%@", users);
+                return users;
+            }];
 }
 
 #pragma mark - UITableViewDelegate && UITableViewDataSource
