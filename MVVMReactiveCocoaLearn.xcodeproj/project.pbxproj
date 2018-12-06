@@ -52,6 +52,8 @@
 		21508C2D219561A0007C83B9 /* MRCLNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21508C2C219561A0007C83B9 /* MRCLNavigationController.m */; };
 		21508C302195650D007C83B9 /* MRCLLoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 21508C2F2195650D007C83B9 /* MRCLLoginViewModel.m */; };
 		21508C3321956829007C83B9 /* MRCLLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21508C3221956829007C83B9 /* MRCLLoginViewController.m */; };
+		2184357221B8D1B7003DBE75 /* MRCLUserListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2184357121B8D1B7003DBE75 /* MRCLUserListViewModel.m */; };
+		2184358321B8FDC4003DBE75 /* MRCLUserListItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2184358221B8FDC4003DBE75 /* MRCLUserListItemModel.m */; };
 		21E87C76219BFEE400E03DDF /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 218DF166219BFBE90038D3F9 /* AFNetworking.framework */; };
 		21E87C77219BFEE400E03DDF /* AFNetworking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 218DF166219BFBE90038D3F9 /* AFNetworking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		21E87C87219BFEED00E03DDF /* ISO8601DateFormatter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 218DF16A219BFBE90038D3F9 /* ISO8601DateFormatter.framework */; };
@@ -314,6 +316,10 @@
 		21508C2F2195650D007C83B9 /* MRCLLoginViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MRCLLoginViewModel.m; sourceTree = "<group>"; };
 		21508C3121956829007C83B9 /* MRCLLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MRCLLoginViewController.h; sourceTree = "<group>"; };
 		21508C3221956829007C83B9 /* MRCLLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MRCLLoginViewController.m; sourceTree = "<group>"; };
+		2184357021B8D1B7003DBE75 /* MRCLUserListViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MRCLUserListViewModel.h; sourceTree = "<group>"; };
+		2184357121B8D1B7003DBE75 /* MRCLUserListViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MRCLUserListViewModel.m; sourceTree = "<group>"; };
+		2184358121B8FDC4003DBE75 /* MRCLUserListItemModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MRCLUserListItemModel.h; sourceTree = "<group>"; };
+		2184358221B8FDC4003DBE75 /* MRCLUserListItemModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MRCLUserListItemModel.m; sourceTree = "<group>"; };
 		218DF15C219BFBE90038D3F9 /* OctoKitDependencies.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OctoKitDependencies.xcodeproj; path = OctoKit/External/OctoKitDependencies/OctoKitDependencies.xcodeproj; sourceTree = "<group>"; };
 		218DF16B219BFC0F0038D3F9 /* ReactiveCocoa.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ReactiveCocoa.xcodeproj; path = OctoKit/Carthage/Checkouts/ReactiveCocoa/ReactiveCocoa.xcodeproj; sourceTree = "<group>"; };
 		218DF17A219BFC300038D3F9 /* Mantle.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Mantle.xcodeproj; path = OctoKit/Carthage/Checkouts/Mantle/Mantle.xcodeproj; sourceTree = "<group>"; };
@@ -455,6 +461,15 @@
 			path = Vertigo;
 			sourceTree = "<group>";
 		};
+		2184358021B8FDA9003DBE75 /* ItemModel */ = {
+			isa = PBXGroup;
+			children = (
+				2184358121B8FDC4003DBE75 /* MRCLUserListItemModel.h */,
+				2184358221B8FDC4003DBE75 /* MRCLUserListItemModel.m */,
+			);
+			path = ItemModel;
+			sourceTree = "<group>";
+		};
 		218DF15D219BFBE90038D3F9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -582,6 +597,7 @@
 		FB2ED1D821944CA300461C9A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2184358021B8FDA9003DBE75 /* ItemModel */,
 				2112A26F21AE919100A2AB3B /* SQL */,
 				2112A26621AE836100A2AB3B /* MRCPersistenceProtocol.h */,
 				2148A62B21AFEE8700CE2E90 /* OCTRepository+MRCPersistence.h */,
@@ -616,6 +632,8 @@
 				212BAEE521A500C200845206 /* MRCLProfileViewModel.m */,
 				21508C2E2195650D007C83B9 /* MRCLLoginViewModel.h */,
 				21508C2F2195650D007C83B9 /* MRCLLoginViewModel.m */,
+				2184357021B8D1B7003DBE75 /* MRCLUserListViewModel.h */,
+				2184357121B8D1B7003DBE75 /* MRCLUserListViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -963,6 +981,7 @@
 				212BAEF521A50B3C00845206 /* MRCLExploreViewController.m in Sources */,
 				FB2ED1BC219332A300461C9A /* ViewController.m in Sources */,
 				212BAEE321A4FF7B00845206 /* MRCLExploreViewModel.m in Sources */,
+				2184357221B8D1B7003DBE75 /* MRCLUserListViewModel.m in Sources */,
 				212BAEC821A438A400845206 /* MRCLTabBarViewModel.m in Sources */,
 				21EAB8B921B0E08B008DFB43 /* MRCLUserListViewController.m in Sources */,
 				21508C2721953DDE007C83B9 /* MRCLViewController.m in Sources */,
@@ -972,6 +991,7 @@
 				212BAEDA21A439E700845206 /* MRCLHomepageViewController.m in Sources */,
 				2112A26921AE88EA00A2AB3B /* FMDatabaseQueue+MRCHelper.m in Sources */,
 				2112A26221AE828D00A2AB3B /* MRCUtil.m in Sources */,
+				2184358321B8FDC4003DBE75 /* MRCLUserListItemModel.m in Sources */,
 				2112A25321AE7F3A00A2AB3B /* MRCLMemoryCache.m in Sources */,
 				2103EF35219951260028BC07 /* TWMessageBarManager.m in Sources */,
 				2103EF2521992BC00028BC07 /* MRCLDoubleTitleView.m in Sources */,

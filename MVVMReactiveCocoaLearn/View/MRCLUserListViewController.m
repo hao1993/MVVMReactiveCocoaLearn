@@ -7,9 +7,11 @@
 //
 
 #import "MRCLUserListViewController.h"
+#import "MRCLUserListViewModel.h"
 
 @interface MRCLUserListViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) MRCLUserListViewModel *viewModel;
 @end
 
 @implementation MRCLUserListViewController
@@ -22,32 +24,20 @@
     self.view.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.tableView];
     
-    
-    
-    @weakify(self);
-    RACCommand *requestCommand = [[RACCommand alloc] initWithSignalBlock:^(NSNumber *page) {
-        @strongify(self)
-        RACSignal *signal = [[self requestRemoteDataSignalWithPage:page.unsignedIntegerValue] takeUntil:self.rac_willDeallocSignal];
-        return signal;
-    }];
-    [requestCommand execute:nil];
-
+    [self bindViewModel];
 }
 
-- (RACSignal *)requestRemoteDataSignalWithPage:(NSUInteger)page {
-    OCTUser *user = [OCTUser mrc_currentUser];
-    OCTClient *authenticatedClient = [OCTClient authenticatedClientWithUser:user token:[SSKeychain accessToken]];
-
-    return [[[[authenticatedClient fetchFollowersForUser:user offset:0 perPage:100]
-              take:100]
-             collect]
-            map:^(NSArray *users) {
-                for (OCTUser *user in users) {
-                    //                                 if (self.isCurrentUser) user.followingStatus = OCTUserFollowingStatusYES;
-                }
-                NSLog(@"users:%@", users);
-                return users;
-            }];
+- (void)bindViewModel {
+    [self.viewModel.requestRemoteDataCommand execute:nil];
+    
+    @weakify(self)
+    [[[RACObserve(self.viewModel, dataSource)
+       distinctUntilChanged]
+      deliverOnMainThread]
+     subscribeNext:^(id x) {
+         @strongify(self)
+         [self.tableView reloadData];
+     }];
 }
 
 #pragma mark - UITableViewDelegate && UITableViewDataSource
@@ -57,7 +47,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 3;
+    return self.viewModel.dataSource.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -113,6 +103,12 @@
     return _tableView;
 }
 
+- (MRCLUserListViewModel *)viewModel {
+    if (!_viewModel) {
+        _viewModel = [[MRCLUserListViewModel alloc] init];
+    }
+    return _viewModel;
+}
 
 
 @end
