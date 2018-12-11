@@ -8,6 +8,7 @@
 
 #import "MRCLUserListViewController.h"
 #import "MRCLUserListViewModel.h"
+#import "MRCLUserListCell.h"
 
 @interface MRCLUserListViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) UITableView *tableView;
@@ -25,6 +26,8 @@
     [self.view addSubview:self.tableView];
     
     [self bindViewModel];
+    [self.tableView registerNib:[UINib nibWithNibName:@"MRCLUserListCell" bundle:nil] forCellReuseIdentifier:@"MRCLUserListCell"];
+
 }
 
 - (void)bindViewModel {
@@ -51,7 +54,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 100.0f;
+    return 75;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
@@ -71,11 +74,8 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *cellStr = @"PublicReposCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellStr];
-    if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellStr];
-    }
+    MRCLUserListCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MRCLUserListCell" forIndexPath:indexPath];
+    [cell bindModel:self.viewModel.dataSource[indexPath.row]];
     return cell;
 }
 

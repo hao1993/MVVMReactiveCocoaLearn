@@ -14,6 +14,7 @@
 ///------------
 
 #define MRCLSharedAppDelegate ((MRCLAppDelegate *)[UIApplication sharedApplication].delegate)
+#define MRCLSharedAppClient ((MRCLAppDelegate *)[UIApplication sharedApplication].delegate).client
 
 ///------------
 /// Client Info

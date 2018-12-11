@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="82" id="KGk-i7-Jjw" customClass="MRCLUserListCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="82"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="81.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aRg-ex-fMr">
+                        <rect key="frame" x="10" y="13.5" width="55" height="55"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="55" id="36h-1E-V7G"/>
+                            <constraint firstAttribute="width" constant="55" id="EBw-hL-zbH"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="yangshihao" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WlU-BI-mkS" userLabel="Login Label">
+                        <rect key="frame" x="75" y="20" width="88" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="https://github.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JzK-Ui-8oi" userLabel="Html Label">
+                        <rect key="frame" x="75" y="46" width="112" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j48-AM-zDF" userLabel="Operation Button" customClass="MRCLFollowButton">
+                        <rect key="frame" x="250" y="26" width="54" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="N7g-11-XCc"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <state key="normal" title="Button">
+                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="operationButtonAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="lZc-4P-EL8"/>
+                        </connections>
+                    </button>
+                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="rHi-2j-fkK" userLabel="Activity Indicator View">
+                        <rect key="frame" x="284" y="31" width="20" height="20"/>
+                    </activityIndicatorView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="j48-AM-zDF" secondAttribute="trailing" constant="16" id="2zY-Ir-Fsi"/>
+                    <constraint firstItem="aRg-ex-fMr" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="61q-f2-Wwb"/>
+                    <constraint firstItem="JzK-Ui-8oi" firstAttribute="leading" secondItem="WlU-BI-mkS" secondAttribute="leading" id="Oue-Zv-CY5"/>
+                    <constraint firstItem="WlU-BI-mkS" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" constant="-10.5" id="QRW-SZ-rz7"/>
+                    <constraint firstItem="JzK-Ui-8oi" firstAttribute="top" secondItem="WlU-BI-mkS" secondAttribute="bottom" constant="5" id="WKk-s5-Omk"/>
+                    <constraint firstItem="j48-AM-zDF" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="WlU-BI-mkS" secondAttribute="trailing" constant="10" id="cca-sf-mFm"/>
+                    <constraint firstItem="j48-AM-zDF" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="dZZ-xs-eeM"/>
+                    <constraint firstItem="aRg-ex-fMr" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="hbA-O0-ENV"/>
+                    <constraint firstItem="rHi-2j-fkK" firstAttribute="trailing" secondItem="j48-AM-zDF" secondAttribute="trailing" id="pnw-Ir-q5E"/>
+                    <constraint firstItem="rHi-2j-fkK" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="xkg-Fc-Ifi"/>
+                    <constraint firstItem="WlU-BI-mkS" firstAttribute="leading" secondItem="aRg-ex-fMr" secondAttribute="trailing" constant="10" id="zS6-Pv-Gmq"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="activityIndicatorView" destination="rHi-2j-fkK" id="RG0-dK-2an"/>
+                <outlet property="avatarImageView" destination="aRg-ex-fMr" id="475-bx-DN9"/>
+                <outlet property="htmlLabel" destination="JzK-Ui-8oi" id="qfE-6q-hGY"/>
+                <outlet property="loginLabel" destination="WlU-BI-mkS" id="9fW-2t-pls"/>
+                <outlet property="operationButton" destination="j48-AM-zDF" id="JZ0-e8-gsU"/>
+            </connections>
+            <point key="canvasLocation" x="-90" y="-64"/>
+        </tableViewCell>
+    </objects>
+</document>

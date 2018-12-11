@@ -38,6 +38,8 @@
     #import "FMDatabaseQueue+MRCHelper.h"
     #import "FMDB.h"
     #import "MRCLMemoryCache.h"
+    #import "MRCLReactiveView.h"
+    #import "OCTClient+MRCUser.h"
 
 #endif
 

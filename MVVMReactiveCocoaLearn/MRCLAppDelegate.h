@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// The window of current application.
 @property (nonatomic, strong) UIWindow *window;
 @property (nonatomic, strong, readonly) MRCLNavigationControllerStack *navigationControllerStack;
-
+@property (nonatomic, strong, readonly) OCTClient *client;
 @end
 
 NS_ASSUME_NONNULL_END

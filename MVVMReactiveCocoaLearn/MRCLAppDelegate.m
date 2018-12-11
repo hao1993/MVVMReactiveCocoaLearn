@@ -15,6 +15,7 @@
 @interface MRCLAppDelegate ()
 @property (nonatomic, strong) MRCLViewModelServicesImpl *services;
 @property (nonatomic, strong, readwrite) MRCLNavigationControllerStack *navigationControllerStack;
+@property (nonatomic, strong, readwrite) OCTClient *client;
 @end
 
 @implementation MRCLAppDelegate
@@ -48,7 +49,7 @@
 
         OCTClient *authenticatedClient = [OCTClient authenticatedClientWithUser:user token:[SSKeychain accessToken]];
         self.services.client = authenticatedClient;
-
+        self.client = authenticatedClient;
         return [[MRCLHomepageViewModel alloc] initWithServices:self.services params:nil];
     } else {
         return [[MRCLLoginViewModel alloc] initWithServices:self.services params:nil];

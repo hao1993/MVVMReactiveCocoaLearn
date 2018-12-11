@@ -12,6 +12,8 @@
 @interface MRCLUserListViewModel ()
 @property (nonatomic, strong, readwrite) RACCommand *requestRemoteDataCommand;
 @property (nonatomic, copy, readwrite) NSArray *users;
+@property (nonatomic, strong) OCTClient *client;
+@property (nonatomic, strong) RACCommand *operationCommand;
 @end
 
 @implementation MRCLUserListViewModel
@@ -25,6 +27,21 @@
 
 - (void)initialize {
     @weakify(self);
+
+    self.client = MRCLSharedAppClient;
+    
+    self.operationCommand = [[RACCommand alloc] initWithSignalBlock:^(MRCLUserListItemModel *model) {
+        @strongify(self)
+        if (model.user.followingStatus == OCTUserFollowingStatusYES) {
+            return [self.client mrc_unfollowUser:model.user];
+        } else if (model.user.followingStatus == OCTUserFollowingStatusNO) {
+            return [self.client mrc_followUser:model.user];
+        }
+        return [RACSignal empty];
+    }];
+    
+    self.operationCommand.allowsConcurrentExecution = YES;
+    
     self.requestRemoteDataCommand = [[RACCommand alloc] initWithSignalBlock:^(NSNumber *page) {
         @strongify(self)
         return [[self requestRemoteDataSignalWithPage:page.unsignedIntegerValue] takeUntil:self.rac_willDeallocSignal];
@@ -43,9 +60,8 @@
 
 - (RACSignal *)requestRemoteDataSignalWithPage:(NSUInteger)page {
     OCTUser *user = [OCTUser mrc_currentUser];
-    OCTClient *authenticatedClient = [OCTClient authenticatedClientWithUser:user token:[SSKeychain accessToken]];
-    
-    return [[[[authenticatedClient fetchFollowingForUser:user offset:0 perPage:100]
+    OCTClient *client = MRCLSharedAppClient;
+    return [[[[client fetchFollowingForUser:user offset:0 perPage:100]
               take:100]
              collect]
             map:^(NSArray *users) {
@@ -58,6 +74,22 @@
     
     NSArray *models = [users.rac_sequence map:^id(OCTUser *user) {
         MRCLUserListItemModel *model = [[MRCLUserListItemModel alloc] initWithUser:user];
+        
+        if (user.followingStatus == OCTUserFollowingStatusUnknown) {
+            [[self.client doesFollowUser:user]
+             subscribeNext:^(NSNumber *isFollowing) {
+                 if (isFollowing.boolValue) {
+                     user.followingStatus = OCTUserFollowingStatusYES;
+                 } else {
+                     user.followingStatus = OCTUserFollowingStatusNO;
+                 }
+             }];
+        }
+        
+        if (![user.objectID isEqualToString:[OCTUser mrc_currentUserId]]) { // Exclude myself
+            model.operationCommand = self.operationCommand;
+        }
+        
         return model;
     }].array;
     

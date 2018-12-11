@@ -37,6 +37,10 @@
 		212BAEF221A50A9D00845206 /* MRCLReposViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 212BAEF121A50A9D00845206 /* MRCLReposViewController.m */; };
 		212BAEF521A50B3C00845206 /* MRCLExploreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 212BAEF421A50B3C00845206 /* MRCLExploreViewController.m */; };
 		212BAEF821A50B9000845206 /* MRCLProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 212BAEF721A50B9000845206 /* MRCLProfileViewController.m */; };
+		2144002F21BE0E0C00CBEBD7 /* MRCLUserListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2144002D21BE0E0C00CBEBD7 /* MRCLUserListCell.m */; };
+		2144003021BE0E0C00CBEBD7 /* MRCLUserListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2144002E21BE0E0C00CBEBD7 /* MRCLUserListCell.xib */; };
+		2144003421BE485B00CBEBD7 /* MRCLFollowButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2144003321BE485B00CBEBD7 /* MRCLFollowButton.m */; };
+		2144003821BE5F4F00CBEBD7 /* OCTClient+MRCUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2144003621BE5F4F00CBEBD7 /* OCTClient+MRCUser.m */; };
 		2148A61D21AFDC6900CE2E90 /* MRCLPublicReposViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2148A61C21AFDC6900CE2E90 /* MRCLPublicReposViewController.m */; };
 		2148A62D21AFEE8700CE2E90 /* OCTRepository+MRCPersistence.m in Sources */ = {isa = PBXBuildFile; fileRef = 2148A62C21AFEE8700CE2E90 /* OCTRepository+MRCPersistence.m */; };
 		214F418F21995EDD00C922D1 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 214F418521995EDD00C922D1 /* LICENSE */; };
@@ -54,6 +58,7 @@
 		21508C3321956829007C83B9 /* MRCLLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21508C3221956829007C83B9 /* MRCLLoginViewController.m */; };
 		2184357221B8D1B7003DBE75 /* MRCLUserListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2184357121B8D1B7003DBE75 /* MRCLUserListViewModel.m */; };
 		2184358321B8FDC4003DBE75 /* MRCLUserListItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2184358221B8FDC4003DBE75 /* MRCLUserListItemModel.m */; };
+		219678EA21BFA77000A5671C /* MRCLButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 219678E921BFA77000A5671C /* MRCLButton.m */; };
 		21E87C76219BFEE400E03DDF /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 218DF166219BFBE90038D3F9 /* AFNetworking.framework */; };
 		21E87C77219BFEE400E03DDF /* AFNetworking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 218DF166219BFBE90038D3F9 /* AFNetworking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		21E87C87219BFEED00E03DDF /* ISO8601DateFormatter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 218DF16A219BFBE90038D3F9 /* ISO8601DateFormatter.framework */; };
@@ -289,6 +294,14 @@
 		212BAEF421A50B3C00845206 /* MRCLExploreViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MRCLExploreViewController.m; sourceTree = "<group>"; };
 		212BAEF621A50B9000845206 /* MRCLProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MRCLProfileViewController.h; sourceTree = "<group>"; };
 		212BAEF721A50B9000845206 /* MRCLProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MRCLProfileViewController.m; sourceTree = "<group>"; };
+		2144002C21BE0E0C00CBEBD7 /* MRCLUserListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MRCLUserListCell.h; sourceTree = "<group>"; };
+		2144002D21BE0E0C00CBEBD7 /* MRCLUserListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MRCLUserListCell.m; sourceTree = "<group>"; };
+		2144002E21BE0E0C00CBEBD7 /* MRCLUserListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MRCLUserListCell.xib; sourceTree = "<group>"; };
+		2144003221BE485B00CBEBD7 /* MRCLFollowButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MRCLFollowButton.h; sourceTree = "<group>"; };
+		2144003321BE485B00CBEBD7 /* MRCLFollowButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MRCLFollowButton.m; sourceTree = "<group>"; };
+		2144003521BE583400CBEBD7 /* MRCLReactiveView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MRCLReactiveView.h; sourceTree = "<group>"; };
+		2144003621BE5F4F00CBEBD7 /* OCTClient+MRCUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "OCTClient+MRCUser.m"; sourceTree = "<group>"; };
+		2144003721BE5F4F00CBEBD7 /* OCTClient+MRCUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OCTClient+MRCUser.h"; sourceTree = "<group>"; };
 		2148A61B21AFDC6900CE2E90 /* MRCLPublicReposViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MRCLPublicReposViewController.h; sourceTree = "<group>"; };
 		2148A61C21AFDC6900CE2E90 /* MRCLPublicReposViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MRCLPublicReposViewController.m; sourceTree = "<group>"; };
 		2148A62B21AFEE8700CE2E90 /* OCTRepository+MRCPersistence.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OCTRepository+MRCPersistence.h"; sourceTree = "<group>"; };
@@ -324,6 +337,8 @@
 		218DF16B219BFC0F0038D3F9 /* ReactiveCocoa.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ReactiveCocoa.xcodeproj; path = OctoKit/Carthage/Checkouts/ReactiveCocoa/ReactiveCocoa.xcodeproj; sourceTree = "<group>"; };
 		218DF17A219BFC300038D3F9 /* Mantle.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Mantle.xcodeproj; path = OctoKit/Carthage/Checkouts/Mantle/Mantle.xcodeproj; sourceTree = "<group>"; };
 		218DF189219BFC4D0038D3F9 /* OctoKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OctoKit.xcodeproj; path = OctoKit/OctoKit.xcodeproj; sourceTree = "<group>"; };
+		219678E821BFA77000A5671C /* MRCLButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MRCLButton.h; sourceTree = "<group>"; };
+		219678E921BFA77000A5671C /* MRCLButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MRCLButton.m; sourceTree = "<group>"; };
 		21EAB8B721B0E08B008DFB43 /* MRCLUserListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MRCLUserListViewController.h; sourceTree = "<group>"; };
 		21EAB8B821B0E08B008DFB43 /* MRCLUserListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MRCLUserListViewController.m; sourceTree = "<group>"; };
 		317C69558C61EE2ED0B3EA85 /* Pods-MVVMReactiveCocoaLearn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVMReactiveCocoaLearn.release.xcconfig"; path = "Pods/Target Support Files/Pods-MVVMReactiveCocoaLearn/Pods-MVVMReactiveCocoaLearn.release.xcconfig"; sourceTree = "<group>"; };
@@ -435,6 +450,27 @@
 				2112A27D21AE91A200A2AB3B /* update_v1_2_0.sql */,
 			);
 			path = SQL;
+			sourceTree = "<group>";
+		};
+		2144001F21BE0DEA00CBEBD7 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				2144002C21BE0E0C00CBEBD7 /* MRCLUserListCell.h */,
+				2144002D21BE0E0C00CBEBD7 /* MRCLUserListCell.m */,
+				2144002E21BE0E0C00CBEBD7 /* MRCLUserListCell.xib */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		2144003121BE483700CBEBD7 /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				2144003221BE485B00CBEBD7 /* MRCLFollowButton.h */,
+				2144003321BE485B00CBEBD7 /* MRCLFollowButton.m */,
+				219678E821BFA77000A5671C /* MRCLButton.h */,
+				219678E921BFA77000A5671C /* MRCLButton.m */,
+			);
+			path = Button;
 			sourceTree = "<group>";
 		};
 		214F418421995EDD00C922D1 /* Vertigo */ = {
@@ -590,6 +626,7 @@
 				2112A25221AE7F3900A2AB3B /* MRCLMemoryCache.m */,
 				2112A26021AE828C00A2AB3B /* MRCUtil.h */,
 				2112A26121AE828D00A2AB3B /* MRCUtil.m */,
+				2144003521BE583400CBEBD7 /* MRCLReactiveView.h */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -612,6 +649,8 @@
 				FB2ED1E221944D6900461C9A /* MRCLAppStoreServiceImpl.m */,
 				2112A26821AE88EA00A2AB3B /* FMDatabaseQueue+MRCHelper.h */,
 				2112A26721AE88EA00A2AB3B /* FMDatabaseQueue+MRCHelper.m */,
+				2144003721BE5F4F00CBEBD7 /* OCTClient+MRCUser.h */,
+				2144003621BE5F4F00CBEBD7 /* OCTClient+MRCUser.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -656,6 +695,8 @@
 		FB2ED1EE2194848800461C9A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2144003121BE483700CBEBD7 /* Button */,
+				2144001F21BE0DEA00CBEBD7 /* TableViewCell */,
 				2103EF2221992BA60028BC07 /* TitleView */,
 				FB2ED1EF2194849C00461C9A /* BaseClass */,
 				212BAED821A439E700845206 /* MRCLHomepageViewController.h */,
@@ -896,6 +937,7 @@
 			files = (
 				FB2ED1C4219332A400461C9A /* LaunchScreen.storyboard in Resources */,
 				2103EF38219951260028BC07 /* icon-info.png in Resources */,
+				2144003021BE0E0C00CBEBD7 /* MRCLUserListCell.xib in Resources */,
 				2103EF3A219951260028BC07 /* icon-error@2x.png in Resources */,
 				FB2ED1C1219332A400461C9A /* Assets.xcassets in Resources */,
 				214F419021995EDD00C922D1 /* README.md in Resources */,
@@ -980,8 +1022,10 @@
 				FB2ED1D521944C2700461C9A /* SSKeychain+MRCLUtil.m in Sources */,
 				212BAEF521A50B3C00845206 /* MRCLExploreViewController.m in Sources */,
 				FB2ED1BC219332A300461C9A /* ViewController.m in Sources */,
+				2144002F21BE0E0C00CBEBD7 /* MRCLUserListCell.m in Sources */,
 				212BAEE321A4FF7B00845206 /* MRCLExploreViewModel.m in Sources */,
 				2184357221B8D1B7003DBE75 /* MRCLUserListViewModel.m in Sources */,
+				2144003821BE5F4F00CBEBD7 /* OCTClient+MRCUser.m in Sources */,
 				212BAEC821A438A400845206 /* MRCLTabBarViewModel.m in Sources */,
 				21EAB8B921B0E08B008DFB43 /* MRCLUserListViewController.m in Sources */,
 				21508C2721953DDE007C83B9 /* MRCLViewController.m in Sources */,
@@ -998,6 +1042,7 @@
 				2112A26521AE830E00A2AB3B /* OCTUser+MRCPersistence.m in Sources */,
 				214F419121995EDD00C922D1 /* TGRImageViewController.m in Sources */,
 				FB2ED1F2219484BE00461C9A /* MRCLNavigationControllerStack.m in Sources */,
+				2144003421BE485B00CBEBD7 /* MRCLFollowButton.m in Sources */,
 				FB2ED1C7219332A400461C9A /* main.m in Sources */,
 				21508C2D219561A0007C83B9 /* MRCLNavigationController.m in Sources */,
 				FB2ED1E321944D6900461C9A /* MRCLAppStoreServiceImpl.m in Sources */,
@@ -1012,6 +1057,7 @@
 				214F419221995EDD00C922D1 /* TGRImageZoomAnimationController.m in Sources */,
 				212BAEDD21A4FE5200845206 /* MRCLNewsViewModel.m in Sources */,
 				212BAEE021A4FF5A00845206 /* MRCLReposViewModel.m in Sources */,
+				219678EA21BFA77000A5671C /* MRCLButton.m in Sources */,
 				21508C3321956829007C83B9 /* MRCLLoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
