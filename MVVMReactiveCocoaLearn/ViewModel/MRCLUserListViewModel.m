@@ -44,7 +44,8 @@
     
     self.requestRemoteDataCommand = [[RACCommand alloc] initWithSignalBlock:^(NSNumber *page) {
         @strongify(self)
-        return [[self requestRemoteDataSignalWithPage:page.unsignedIntegerValue] takeUntil:self.rac_willDeallocSignal];
+        RACSignal *signal = [[self requestRemoteDataSignalWithPage:page.unsignedIntegerValue] takeUntil:self.rac_willDeallocSignal];
+        return signal == nil ? [RACSignal empty] : signal;
     }];
     
     [self.requestRemoteDataCommand.executionSignals.switchToLatest subscribeNext:^(NSArray *users) {

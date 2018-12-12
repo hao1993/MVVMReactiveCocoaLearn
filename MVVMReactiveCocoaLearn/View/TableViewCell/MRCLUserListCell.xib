@@ -43,11 +43,7 @@
                             <constraint firstAttribute="height" constant="30" id="N7g-11-XCc"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <state key="normal" title="Button">
-                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        </state>
+                        <state key="normal" title="Button"/>
                         <connections>
                             <action selector="operationButtonAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="lZc-4P-EL8"/>
                         </connections>

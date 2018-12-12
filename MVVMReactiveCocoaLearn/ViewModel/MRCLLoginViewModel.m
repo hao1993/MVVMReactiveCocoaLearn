@@ -41,6 +41,7 @@
         NSLog(@"Login success");
         [[MRCLMemoryCache sharedInstance] setObject:authenticatedClient.user forKey:@"currentUser"];
 
+        MRCLSharedAppClient = authenticatedClient;
         self.services.client = authenticatedClient;
 
         [authenticatedClient.user mrc_saveOrUpdate];

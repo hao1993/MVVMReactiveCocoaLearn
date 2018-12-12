@@ -15,7 +15,6 @@
 @interface MRCLAppDelegate ()
 @property (nonatomic, strong) MRCLViewModelServicesImpl *services;
 @property (nonatomic, strong, readwrite) MRCLNavigationControllerStack *navigationControllerStack;
-@property (nonatomic, strong, readwrite) OCTClient *client;
 @end
 
 @implementation MRCLAppDelegate

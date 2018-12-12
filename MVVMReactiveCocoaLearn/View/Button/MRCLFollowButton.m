@@ -65,12 +65,13 @@ static UIImage *_selectedImage = nil;
         self.backgroundColor = HexRGB(0x569e3d);
         self.layer.borderWidth = 0;
     } else {
-        [self setImage:_selectedImage forState:UIControlStateNormal];
-        [self setTitle:@"Unfollow" forState:UIControlStateNormal];
-        [self setTitleColor:HexRGB(0x333333) forState:UIControlStateNormal];
+        [self setImage:_selectedImage forState:UIControlStateSelected];
+        [self setTitle:@"Unfollow" forState:UIControlStateSelected];
+        [self setTitleColor:HexRGB(0x333333) forState:UIControlStateSelected];
         
         self.backgroundColor = HexRGB(0xeeeeee);
         self.layer.borderWidth = 1;
+        self.tintColor = HexRGB(0xeeeeee);
     }
 }
 

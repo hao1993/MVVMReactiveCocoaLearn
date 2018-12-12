@@ -26,12 +26,13 @@
     [self.view addSubview:self.tableView];
     
     [self bindViewModel];
-    [self.tableView registerNib:[UINib nibWithNibName:@"MRCLUserListCell" bundle:nil] forCellReuseIdentifier:@"MRCLUserListCell"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"MRCLUserListCell" bundle:nil] forCellReuseIdentifier:@"UserListCell"];
 
 }
 
 - (void)bindViewModel {
-    [self.viewModel.requestRemoteDataCommand execute:nil];
+    self.viewModel = [[MRCLUserListViewModel alloc] init];
+    [self.viewModel.requestRemoteDataCommand execute:@1];
     
     @weakify(self)
     [[[RACObserve(self.viewModel, dataSource)
@@ -74,7 +75,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    MRCLUserListCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MRCLUserListCell" forIndexPath:indexPath];
+    MRCLUserListCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UserListCell" forIndexPath:indexPath];
     [cell bindModel:self.viewModel.dataSource[indexPath.row]];
     return cell;
 }
@@ -102,13 +103,5 @@
     }
     return _tableView;
 }
-
-- (MRCLUserListViewModel *)viewModel {
-    if (!_viewModel) {
-        _viewModel = [[MRCLUserListViewModel alloc] init];
-    }
-    return _viewModel;
-}
-
 
 @end
