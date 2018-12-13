@@ -7,9 +7,12 @@
 //
 
 #import "MRCLPublicReposViewController.h"
+#import "MRCLOwnedReposViewModel.h"
+#import "MRCLReposCell.h"
 
 @interface MRCLPublicReposViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) MRCLOwnedReposViewModel *viewModel;
 @end
 
 @implementation MRCLPublicReposViewController
@@ -22,6 +25,19 @@
     self.view.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.tableView];
     
+    [self.tableView registerNib:[UINib nibWithNibName:@"MRCLReposCell" bundle:nil] forCellReuseIdentifier:@"ReposCell"];
+    [self bindViewModel];
+}
+
+- (void)bindViewModel {
+    self.viewModel = [[MRCLOwnedReposViewModel alloc] init];
+    [self.viewModel.requestRemoteDataCommand execute:@1];
+    
+    @weakify(self);
+    [[[RACObserve(self.viewModel, dataSource) distinctUntilChanged] deliverOnMainThread] subscribeNext:^(id x) {
+        @strongify(self);
+        [self.tableView reloadData];
+    }];
 }
 
 #pragma mark - UITableViewDelegate && UITableViewDataSource
@@ -31,11 +47,11 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 3;
+    return self.viewModel.dataSource.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 100.0f;
+    return 80.5f;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
@@ -55,11 +71,8 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *cellStr = @"PublicReposCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellStr];
-    if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellStr];
-    }
+    MRCLReposCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ReposCell" forIndexPath:indexPath];
+    [cell bindModel:self.viewModel.dataSource[indexPath.row]];
     return cell;
 }
 

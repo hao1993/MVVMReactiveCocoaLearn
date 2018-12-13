@@ -59,6 +59,8 @@
 		2184357221B8D1B7003DBE75 /* MRCLUserListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2184357121B8D1B7003DBE75 /* MRCLUserListViewModel.m */; };
 		2184358321B8FDC4003DBE75 /* MRCLUserListItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2184358221B8FDC4003DBE75 /* MRCLUserListItemModel.m */; };
 		219678EA21BFA77000A5671C /* MRCLButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 219678E921BFA77000A5671C /* MRCLButton.m */; };
+		21BB620521C200D40010C2CD /* MRCLReposCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 21BB620321C200D40010C2CD /* MRCLReposCell.m */; };
+		21BB620621C200D40010C2CD /* MRCLReposCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21BB620421C200D40010C2CD /* MRCLReposCell.xib */; };
 		21E87C76219BFEE400E03DDF /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 218DF166219BFBE90038D3F9 /* AFNetworking.framework */; };
 		21E87C77219BFEE400E03DDF /* AFNetworking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 218DF166219BFBE90038D3F9 /* AFNetworking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		21E87C87219BFEED00E03DDF /* ISO8601DateFormatter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 218DF16A219BFBE90038D3F9 /* ISO8601DateFormatter.framework */; };
@@ -67,6 +69,8 @@
 		21E87C8C219BFEF600E03DDF /* ReactiveCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 218DF177219BFC0F0038D3F9 /* ReactiveCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		21E87C8F219BFF0300E03DDF /* OctoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 218DF196219BFC4D0038D3F9 /* OctoKit.framework */; };
 		21E87C90219BFF0300E03DDF /* OctoKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 218DF196219BFC4D0038D3F9 /* OctoKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		21EA7B4821C0F30B003B12BC /* MRCLOwnedReposViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 21EA7B4721C0F30B003B12BC /* MRCLOwnedReposViewModel.m */; };
+		21EA7B5721C10778003B12BC /* MRCLOwnedReposItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 21EA7B5621C10778003B12BC /* MRCLOwnedReposItemModel.m */; };
 		21EAB8B921B0E08B008DFB43 /* MRCLUserListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21EAB8B821B0E08B008DFB43 /* MRCLUserListViewController.m */; };
 		27F2A5754FD291894679F3B7 /* libPods-MVVMReactiveCocoaLearn.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D655EA0BCBF1F01725CAE4F8 /* libPods-MVVMReactiveCocoaLearn.a */; };
 		FB2ED1BC219332A300461C9A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2ED1BB219332A300461C9A /* ViewController.m */; };
@@ -339,6 +343,13 @@
 		218DF189219BFC4D0038D3F9 /* OctoKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OctoKit.xcodeproj; path = OctoKit/OctoKit.xcodeproj; sourceTree = "<group>"; };
 		219678E821BFA77000A5671C /* MRCLButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MRCLButton.h; sourceTree = "<group>"; };
 		219678E921BFA77000A5671C /* MRCLButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MRCLButton.m; sourceTree = "<group>"; };
+		21BB620221C200D40010C2CD /* MRCLReposCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MRCLReposCell.h; sourceTree = "<group>"; };
+		21BB620321C200D40010C2CD /* MRCLReposCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MRCLReposCell.m; sourceTree = "<group>"; };
+		21BB620421C200D40010C2CD /* MRCLReposCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MRCLReposCell.xib; sourceTree = "<group>"; };
+		21EA7B4621C0F30B003B12BC /* MRCLOwnedReposViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MRCLOwnedReposViewModel.h; sourceTree = "<group>"; };
+		21EA7B4721C0F30B003B12BC /* MRCLOwnedReposViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MRCLOwnedReposViewModel.m; sourceTree = "<group>"; };
+		21EA7B5521C10778003B12BC /* MRCLOwnedReposItemModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MRCLOwnedReposItemModel.h; sourceTree = "<group>"; };
+		21EA7B5621C10778003B12BC /* MRCLOwnedReposItemModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MRCLOwnedReposItemModel.m; sourceTree = "<group>"; };
 		21EAB8B721B0E08B008DFB43 /* MRCLUserListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MRCLUserListViewController.h; sourceTree = "<group>"; };
 		21EAB8B821B0E08B008DFB43 /* MRCLUserListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MRCLUserListViewController.m; sourceTree = "<group>"; };
 		317C69558C61EE2ED0B3EA85 /* Pods-MVVMReactiveCocoaLearn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVMReactiveCocoaLearn.release.xcconfig"; path = "Pods/Target Support Files/Pods-MVVMReactiveCocoaLearn/Pods-MVVMReactiveCocoaLearn.release.xcconfig"; sourceTree = "<group>"; };
@@ -458,6 +469,9 @@
 				2144002C21BE0E0C00CBEBD7 /* MRCLUserListCell.h */,
 				2144002D21BE0E0C00CBEBD7 /* MRCLUserListCell.m */,
 				2144002E21BE0E0C00CBEBD7 /* MRCLUserListCell.xib */,
+				21BB620221C200D40010C2CD /* MRCLReposCell.h */,
+				21BB620321C200D40010C2CD /* MRCLReposCell.m */,
+				21BB620421C200D40010C2CD /* MRCLReposCell.xib */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -502,6 +516,8 @@
 			children = (
 				2184358121B8FDC4003DBE75 /* MRCLUserListItemModel.h */,
 				2184358221B8FDC4003DBE75 /* MRCLUserListItemModel.m */,
+				21EA7B5521C10778003B12BC /* MRCLOwnedReposItemModel.h */,
+				21EA7B5621C10778003B12BC /* MRCLOwnedReposItemModel.m */,
 			);
 			path = ItemModel;
 			sourceTree = "<group>";
@@ -673,6 +689,8 @@
 				21508C2F2195650D007C83B9 /* MRCLLoginViewModel.m */,
 				2184357021B8D1B7003DBE75 /* MRCLUserListViewModel.h */,
 				2184357121B8D1B7003DBE75 /* MRCLUserListViewModel.m */,
+				21EA7B4621C0F30B003B12BC /* MRCLOwnedReposViewModel.h */,
+				21EA7B4721C0F30B003B12BC /* MRCLOwnedReposViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -935,6 +953,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21BB620621C200D40010C2CD /* MRCLReposCell.xib in Resources */,
 				FB2ED1C4219332A400461C9A /* LaunchScreen.storyboard in Resources */,
 				2103EF38219951260028BC07 /* icon-info.png in Resources */,
 				2144003021BE0E0C00CBEBD7 /* MRCLUserListCell.xib in Resources */,
@@ -1028,6 +1047,8 @@
 				2144003821BE5F4F00CBEBD7 /* OCTClient+MRCUser.m in Sources */,
 				212BAEC821A438A400845206 /* MRCLTabBarViewModel.m in Sources */,
 				21EAB8B921B0E08B008DFB43 /* MRCLUserListViewController.m in Sources */,
+				21EA7B5721C10778003B12BC /* MRCLOwnedReposItemModel.m in Sources */,
+				21BB620521C200D40010C2CD /* MRCLReposCell.m in Sources */,
 				21508C2721953DDE007C83B9 /* MRCLViewController.m in Sources */,
 				212BAEF221A50A9D00845206 /* MRCLReposViewController.m in Sources */,
 				FB2ED1E021944D2C00461C9A /* MRCLRepositoryServiceImpl.m in Sources */,
@@ -1048,6 +1069,7 @@
 				FB2ED1E321944D6900461C9A /* MRCLAppStoreServiceImpl.m in Sources */,
 				FB2ED1ED21944E3700461C9A /* MRCLViewModelServicesImpl.m in Sources */,
 				212BAEE621A500C200845206 /* MRCLProfileViewModel.m in Sources */,
+				21EA7B4821C0F30B003B12BC /* MRCLOwnedReposViewModel.m in Sources */,
 				212BAEE921A5092300845206 /* MRCLTableViewController.m in Sources */,
 				FB2ED1EA21944E2000461C9A /* MRCLViewModel.m in Sources */,
 				2148A61D21AFDC6900CE2E90 /* MRCLPublicReposViewController.m in Sources */,

@@ -35,10 +35,7 @@
     [self.viewModel.requestRemoteDataCommand execute:@1];
     
     @weakify(self)
-    [[[RACObserve(self.viewModel, dataSource)
-       distinctUntilChanged]
-      deliverOnMainThread]
-     subscribeNext:^(id x) {
+    [[[RACObserve(self.viewModel, dataSource) distinctUntilChanged] deliverOnMainThread] subscribeNext:^(id x) {
          @strongify(self)
          [self.tableView reloadData];
      }];

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="MRCLReposCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="80.5"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EyP-st-e1B" userLabel="Icon ImageView">
+                        <rect key="frame" x="8" y="8" width="22" height="22"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="22" id="Leg-M3-y1B"/>
+                            <constraint firstAttribute="width" constant="22" id="LfG-fa-w3V"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MVVMReactiveCocoaLearn" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KO5-1W-TkV" userLabel="Name Label">
+                        <rect key="frame" x="38" y="8" width="274" height="21"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                        <color key="textColor" red="0.20392156862745098" green="0.43137254901960786" blue="0.71764705882352942" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GitHub API client for Objective-C" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mLS-eh-SxS" userLabel="Desc Label">
+                        <rect key="frame" x="38" y="34" width="274" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hA9-JL-khs" userLabel="Language Label">
+                        <rect key="frame" x="38" y="57" width="68" height="15"/>
+                        <string key="text">Objective-C
+</string>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="J0K-Gy-MyJ" userLabel="Star Icon Image View">
+                        <rect key="frame" x="116" y="58.5" width="12" height="12"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="12" id="5Sh-Er-QdU"/>
+                            <constraint firstAttribute="width" constant="12" id="PJK-4f-bt6"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="opY-EF-Gg1" userLabel="Star Count Label">
+                        <rect key="frame" x="132" y="57" width="8" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="15" id="Ngu-hO-qOM"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VJ4-Js-sD7" userLabel="Fork Icon Image View">
+                        <rect key="frame" x="148" y="55.5" width="22" height="18"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="18" id="6gb-0M-a1W"/>
+                            <constraint firstAttribute="width" constant="22" id="73K-na-9g3"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z8V-rh-PWU" userLabel="Fork Count Label">
+                        <rect key="frame" x="175" y="57" width="8" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="15" id="FEy-0n-iKq"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="3 days ago" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IRF-ir-5Cr" userLabel="Update Time Label">
+                        <rect key="frame" x="193" y="57" width="119" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="15" id="HjN-PJ-ndU"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="EyP-st-e1B" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="AAK-Ck-i04"/>
+                    <constraint firstItem="KO5-1W-TkV" firstAttribute="top" secondItem="EyP-st-e1B" secondAttribute="top" id="DD5-Ao-iX6"/>
+                    <constraint firstItem="IRF-ir-5Cr" firstAttribute="centerY" secondItem="hA9-JL-khs" secondAttribute="centerY" id="E1S-zN-p2m"/>
+                    <constraint firstItem="Z8V-rh-PWU" firstAttribute="leading" secondItem="VJ4-Js-sD7" secondAttribute="trailing" constant="5" id="FyP-6g-XfK"/>
+                    <constraint firstItem="opY-EF-Gg1" firstAttribute="leading" secondItem="J0K-Gy-MyJ" secondAttribute="trailing" constant="4" id="LBV-Cw-bG5"/>
+                    <constraint firstItem="EyP-st-e1B" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="Rbb-hT-LO0"/>
+                    <constraint firstAttribute="trailing" secondItem="IRF-ir-5Cr" secondAttribute="trailing" constant="8" id="TbD-6O-ao7"/>
+                    <constraint firstAttribute="trailing" secondItem="KO5-1W-TkV" secondAttribute="trailing" constant="8" id="a0Y-7m-tqM"/>
+                    <constraint firstItem="Z8V-rh-PWU" firstAttribute="centerY" secondItem="hA9-JL-khs" secondAttribute="centerY" id="blv-cB-RMw"/>
+                    <constraint firstItem="mLS-eh-SxS" firstAttribute="top" secondItem="KO5-1W-TkV" secondAttribute="bottom" constant="5" id="fwV-S6-gO1"/>
+                    <constraint firstItem="VJ4-Js-sD7" firstAttribute="leading" secondItem="opY-EF-Gg1" secondAttribute="trailing" constant="8" id="g9N-ox-65R"/>
+                    <constraint firstAttribute="trailing" secondItem="mLS-eh-SxS" secondAttribute="trailing" constant="8" id="gYV-4N-t4O"/>
+                    <constraint firstItem="VJ4-Js-sD7" firstAttribute="centerY" secondItem="hA9-JL-khs" secondAttribute="centerY" id="gai-xv-qSk"/>
+                    <constraint firstItem="KO5-1W-TkV" firstAttribute="leading" secondItem="EyP-st-e1B" secondAttribute="trailing" constant="8" id="gbY-Kx-F39"/>
+                    <constraint firstItem="mLS-eh-SxS" firstAttribute="leading" secondItem="KO5-1W-TkV" secondAttribute="leading" id="ghC-tm-BiC"/>
+                    <constraint firstItem="J0K-Gy-MyJ" firstAttribute="leading" secondItem="hA9-JL-khs" secondAttribute="trailing" constant="10" id="pYE-e0-AEU"/>
+                    <constraint firstItem="opY-EF-Gg1" firstAttribute="centerY" secondItem="hA9-JL-khs" secondAttribute="centerY" id="u5R-Tc-alZ"/>
+                    <constraint firstItem="IRF-ir-5Cr" firstAttribute="leading" secondItem="Z8V-rh-PWU" secondAttribute="trailing" constant="10" id="uuZ-A5-ZIH"/>
+                    <constraint firstItem="hA9-JL-khs" firstAttribute="top" secondItem="mLS-eh-SxS" secondAttribute="bottom" constant="5" id="vCi-1A-8kk"/>
+                    <constraint firstItem="hA9-JL-khs" firstAttribute="leading" secondItem="mLS-eh-SxS" secondAttribute="leading" id="zn8-ZF-TsY"/>
+                    <constraint firstItem="J0K-Gy-MyJ" firstAttribute="centerY" secondItem="hA9-JL-khs" secondAttribute="centerY" id="zxX-nD-eoo"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="desLabel" destination="mLS-eh-SxS" id="PDY-54-Vvj"/>
+                <outlet property="forkCountLabel" destination="Z8V-rh-PWU" id="mhS-9H-odV"/>
+                <outlet property="forkIconImageView" destination="VJ4-Js-sD7" id="GL9-ii-jY5"/>
+                <outlet property="iconImageView" destination="EyP-st-e1B" id="qlE-5M-OM8"/>
+                <outlet property="languageLabel" destination="hA9-JL-khs" id="axV-0J-xJc"/>
+                <outlet property="nameLabel" destination="KO5-1W-TkV" id="W6W-Gg-mhw"/>
+                <outlet property="starCountLabel" destination="opY-EF-Gg1" id="sNW-fy-obb"/>
+                <outlet property="starIconImageView" destination="J0K-Gy-MyJ" id="lli-i2-SCj"/>
+                <outlet property="updateTimeLabel" destination="IRF-ir-5Cr" id="fDg-xD-5gI"/>
+            </connections>
+            <point key="canvasLocation" x="-160" y="138.98050974512745"/>
+        </tableViewCell>
+    </objects>
+</document>
