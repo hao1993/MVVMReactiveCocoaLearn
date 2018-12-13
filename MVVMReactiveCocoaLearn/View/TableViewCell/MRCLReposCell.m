@@ -69,6 +69,7 @@ static UIImage *_tintedStarIcon = nil;
     self.desLabel.text = model.repository.repoDescription;
     self.forkCountLabel.text = @(model.repository.forksCount).stringValue;
     self.starCountLabel.text = @(model.repository.stargazersCount).stringValue;
+    self.updateTimeLabel.text = self.model.updateTime;
     
     if (model.repository.isPrivate) {
         self.iconImageView.image = _lockIcon;
@@ -77,6 +78,7 @@ static UIImage *_tintedStarIcon = nil;
     } else {
         self.iconImageView.image = _repoIcon;
     }
+    
 }
 
 @end

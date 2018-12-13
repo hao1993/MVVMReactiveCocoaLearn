@@ -7,6 +7,7 @@
 //
 
 #import "MRCLOwnedReposItemModel.h"
+#import <FormatterKit/TTTTimeIntervalFormatter.h>
 
 @interface MRCLOwnedReposItemModel ()
 @property (nonatomic, strong, readwrite) OCTRepository *repository;
@@ -31,6 +32,10 @@
         
         self.language = repository.language ?: @"";
         self.name = [[NSAttributedString alloc] initWithString:self.repository.name].copy;
+        
+        TTTTimeIntervalFormatter *timeIntervalFormatter = [[TTTTimeIntervalFormatter alloc] init];
+        timeIntervalFormatter.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
+        self.updateTime = [timeIntervalFormatter stringForTimeIntervalFromDate:[NSDate date] toDate:repository.dateUpdated];
         
         CGFloat height = 0;
         if (self.repository.repoDescription.length > 0) {

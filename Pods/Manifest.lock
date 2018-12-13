@@ -2,9 +2,40 @@ PODS:
   - FMDB (2.6.2):
     - FMDB/standard (= 2.6.2)
   - FMDB/standard (2.6.2)
+  - FormatterKit (1.8.1):
+    - FormatterKit/AddressFormatter (= 1.8.1)
+    - FormatterKit/ArrayFormatter (= 1.8.1)
+    - FormatterKit/ColorFormatter (= 1.8.1)
+    - FormatterKit/LocationFormatter (= 1.8.1)
+    - FormatterKit/NameFormatter (= 1.8.1)
+    - FormatterKit/OrdinalNumberFormatter (= 1.8.1)
+    - FormatterKit/Resources (= 1.8.1)
+    - FormatterKit/TimeIntervalFormatter (= 1.8.1)
+    - FormatterKit/UnitOfInformationFormatter (= 1.8.1)
+    - FormatterKit/URLRequestFormatter (= 1.8.1)
+  - FormatterKit/AddressFormatter (1.8.1):
+    - FormatterKit/Resources
+  - FormatterKit/ArrayFormatter (1.8.1):
+    - FormatterKit/Resources
+  - FormatterKit/ColorFormatter (1.8.1):
+    - FormatterKit/Resources
+  - FormatterKit/LocationFormatter (1.8.1):
+    - FormatterKit/Resources
+  - FormatterKit/NameFormatter (1.8.1):
+    - FormatterKit/Resources
+  - FormatterKit/OrdinalNumberFormatter (1.8.1):
+    - FormatterKit/Resources
+  - FormatterKit/Resources (1.8.1)
+  - FormatterKit/TimeIntervalFormatter (1.8.1):
+    - FormatterKit/Resources
+  - FormatterKit/UnitOfInformationFormatter (1.8.1):
+    - FormatterKit/Resources
+  - FormatterKit/URLRequestFormatter (1.8.1):
+    - FormatterKit/Resources
   - IQKeyboardManager (3.2.0.3)
   - Masonry (1.1.0)
   - MBProgressHUD (0.9.2)
+  - MJRefresh (3.1.15.7)
   - MKNetworkKit (0.87):
     - Reachability (~> 3.1.0)
   - OcticonsIOS (0.0.2)
@@ -19,9 +50,11 @@ PODS:
 
 DEPENDENCIES:
   - FMDB (= 2.6.2)
+  - FormatterKit (= 1.8.1)
   - IQKeyboardManager (= 3.2.0.3)
   - Masonry (~> 1.1.0)
   - MBProgressHUD (= 0.9.2)
+  - MJRefresh
   - MKNetworkKit (= 0.87)
   - OcticonsIOS (from `https://github.com/jacksonh/OcticonsIOS.git`, commit `4bd3b21`)
   - SDWebImage (= 3.7.6)
@@ -31,9 +64,11 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - FMDB
+    - FormatterKit
     - IQKeyboardManager
     - Masonry
     - MBProgressHUD
+    - MJRefresh
     - MKNetworkKit
     - Reachability
     - SDWebImage
@@ -52,9 +87,11 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
+  FormatterKit: 11ad17b983200629246a5a466f6f1bfa2df823cb
   IQKeyboardManager: 7b071d1284b47b1c0c19891a042c2c65f118fa85
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
+  MJRefresh: 697f8ec75ebdbe9207767bb682cf0f51b0d8a41f
   MKNetworkKit: 60ad3c83b62183e40ba75ce772c9427c25b520de
   OcticonsIOS: e21204b48b0d83f7740008abed42f8b1573b3ffc
   Reachability: dd9aa4fb6667b9f787690a74f53cb7634ce99893
@@ -62,6 +99,6 @@ SPEC CHECKSUMS:
   SSKeychain: 3f42991739c6c60a9cf1bbd4dff6c0d3694bcf3d
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 99b706c502fa2ccab3dc093c7341da8dc9b676e3
+PODFILE CHECKSUM: ae952ab7b5636d35b550a7c38be3d5b7281f96fb
 
 COCOAPODS: 1.6.0.beta.2

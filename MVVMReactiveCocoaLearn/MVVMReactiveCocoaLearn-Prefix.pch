@@ -40,6 +40,7 @@
     #import "MRCLMemoryCache.h"
     #import "MRCLReactiveView.h"
     #import "OCTClient+MRCUser.h"
+    #import <MJRefresh/MJRefresh.h>
 
 #endif
 

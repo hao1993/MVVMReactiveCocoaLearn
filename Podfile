@@ -11,4 +11,6 @@ target 'MVVMReactiveCocoaLearn' do
     pod 'IQKeyboardManager', '3.2.0.3'
     pod 'MBProgressHUD', '0.9.2'
     pod 'FMDB', '2.6.2'
+    pod 'FormatterKit', '1.8.1'
+    pod 'MJRefresh'
 end
