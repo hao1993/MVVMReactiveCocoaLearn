@@ -37,13 +37,12 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j48-AM-zDF" userLabel="Operation Button" customClass="MRCLFollowButton">
-                        <rect key="frame" x="250" y="26" width="54" height="30"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j48-AM-zDF" userLabel="Operation Button" customClass="MRCLFollowButton">
+                        <rect key="frame" x="214" y="26" width="90" height="30"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="30" id="N7g-11-XCc"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                        <state key="normal" title="Button"/>
+                        <state key="normal" title="Button" image="icon-error.png"/>
                         <connections>
                             <action selector="operationButtonAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="lZc-4P-EL8"/>
                         </connections>
@@ -76,4 +75,7 @@
             <point key="canvasLocation" x="-90" y="-64"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="icon-error.png" width="36" height="36"/>
+    </resources>
 </document>

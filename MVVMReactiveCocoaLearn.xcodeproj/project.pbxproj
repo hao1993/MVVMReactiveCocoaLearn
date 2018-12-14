@@ -56,6 +56,11 @@
 		21508C2D219561A0007C83B9 /* MRCLNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21508C2C219561A0007C83B9 /* MRCLNavigationController.m */; };
 		21508C302195650D007C83B9 /* MRCLLoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 21508C2F2195650D007C83B9 /* MRCLLoginViewModel.m */; };
 		21508C3321956829007C83B9 /* MRCLLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21508C3221956829007C83B9 /* MRCLLoginViewController.m */; };
+		216D0CA621C37F0A00DE3BCD /* MRCLAvatarHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 216D0CA521C37F0A00DE3BCD /* MRCLAvatarHeaderView.m */; };
+		216D0CA821C37FED00DE3BCD /* MRCLAvatarHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 216D0CA721C37FED00DE3BCD /* MRCLAvatarHeaderView.xib */; };
+		216D0CAB21C3933F00DE3BCD /* MRCLAvatarHeaderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 216D0CAA21C3933F00DE3BCD /* MRCLAvatarHeaderModel.m */; };
+		216D0CAE21C398EC00DE3BCD /* UIView+Borders.m in Sources */ = {isa = PBXBuildFile; fileRef = 216D0CAC21C398EB00DE3BCD /* UIView+Borders.m */; };
+		216D0CB121C3A21A00DE3BCD /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 216D0CAF21C3A21A00DE3BCD /* UIView+Extension.m */; };
 		2184357221B8D1B7003DBE75 /* MRCLUserListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2184357121B8D1B7003DBE75 /* MRCLUserListViewModel.m */; };
 		2184358321B8FDC4003DBE75 /* MRCLUserListItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2184358221B8FDC4003DBE75 /* MRCLUserListItemModel.m */; };
 		219678EA21BFA77000A5671C /* MRCLButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 219678E921BFA77000A5671C /* MRCLButton.m */; };
@@ -333,6 +338,15 @@
 		21508C2F2195650D007C83B9 /* MRCLLoginViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MRCLLoginViewModel.m; sourceTree = "<group>"; };
 		21508C3121956829007C83B9 /* MRCLLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MRCLLoginViewController.h; sourceTree = "<group>"; };
 		21508C3221956829007C83B9 /* MRCLLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MRCLLoginViewController.m; sourceTree = "<group>"; };
+		216D0CA421C37F0A00DE3BCD /* MRCLAvatarHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MRCLAvatarHeaderView.h; sourceTree = "<group>"; };
+		216D0CA521C37F0A00DE3BCD /* MRCLAvatarHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MRCLAvatarHeaderView.m; sourceTree = "<group>"; };
+		216D0CA721C37FED00DE3BCD /* MRCLAvatarHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MRCLAvatarHeaderView.xib; sourceTree = "<group>"; };
+		216D0CA921C3933F00DE3BCD /* MRCLAvatarHeaderModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MRCLAvatarHeaderModel.h; sourceTree = "<group>"; };
+		216D0CAA21C3933F00DE3BCD /* MRCLAvatarHeaderModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MRCLAvatarHeaderModel.m; sourceTree = "<group>"; };
+		216D0CAC21C398EB00DE3BCD /* UIView+Borders.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Borders.m"; sourceTree = "<group>"; };
+		216D0CAD21C398EB00DE3BCD /* UIView+Borders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Borders.h"; sourceTree = "<group>"; };
+		216D0CAF21C3A21A00DE3BCD /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		216D0CB021C3A21A00DE3BCD /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
 		2184357021B8D1B7003DBE75 /* MRCLUserListViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MRCLUserListViewModel.h; sourceTree = "<group>"; };
 		2184357121B8D1B7003DBE75 /* MRCLUserListViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MRCLUserListViewModel.m; sourceTree = "<group>"; };
 		2184358121B8FDC4003DBE75 /* MRCLUserListItemModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MRCLUserListItemModel.h; sourceTree = "<group>"; };
@@ -511,6 +525,16 @@
 			path = Vertigo;
 			sourceTree = "<group>";
 		};
+		216D0C9721C37EE600DE3BCD /* TableHeaderFooterView */ = {
+			isa = PBXGroup;
+			children = (
+				216D0CA421C37F0A00DE3BCD /* MRCLAvatarHeaderView.h */,
+				216D0CA521C37F0A00DE3BCD /* MRCLAvatarHeaderView.m */,
+				216D0CA721C37FED00DE3BCD /* MRCLAvatarHeaderView.xib */,
+			);
+			path = TableHeaderFooterView;
+			sourceTree = "<group>";
+		};
 		2184358021B8FDA9003DBE75 /* ItemModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -518,6 +542,8 @@
 				2184358221B8FDC4003DBE75 /* MRCLUserListItemModel.m */,
 				21EA7B5521C10778003B12BC /* MRCLOwnedReposItemModel.h */,
 				21EA7B5621C10778003B12BC /* MRCLOwnedReposItemModel.m */,
+				216D0CA921C3933F00DE3BCD /* MRCLAvatarHeaderModel.h */,
+				216D0CAA21C3933F00DE3BCD /* MRCLAvatarHeaderModel.m */,
 			);
 			path = ItemModel;
 			sourceTree = "<group>";
@@ -632,6 +658,8 @@
 			children = (
 				FB2ED1D321944C2700461C9A /* SSKeychain+MRCLUtil.h */,
 				FB2ED1D421944C2700461C9A /* SSKeychain+MRCLUtil.m */,
+				216D0CAD21C398EB00DE3BCD /* UIView+Borders.h */,
+				216D0CAC21C398EB00DE3BCD /* UIView+Borders.m */,
 				FB2ED1D621944C6800461C9A /* MRCLConfig.h */,
 				FB2ED1D721944C9000461C9A /* MRCTConstant.h */,
 				21508C2221953D8E007C83B9 /* MRCLRouter.h */,
@@ -643,6 +671,8 @@
 				2112A26021AE828C00A2AB3B /* MRCUtil.h */,
 				2112A26121AE828D00A2AB3B /* MRCUtil.m */,
 				2144003521BE583400CBEBD7 /* MRCLReactiveView.h */,
+				216D0CB021C3A21A00DE3BCD /* UIView+Extension.h */,
+				216D0CAF21C3A21A00DE3BCD /* UIView+Extension.m */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -713,6 +743,7 @@
 		FB2ED1EE2194848800461C9A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				216D0C9721C37EE600DE3BCD /* TableHeaderFooterView */,
 				2144003121BE483700CBEBD7 /* Button */,
 				2144001F21BE0DEA00CBEBD7 /* TableViewCell */,
 				2103EF2221992BA60028BC07 /* TitleView */,
@@ -963,6 +994,7 @@
 				2103EF3B219951260028BC07 /* icon-success.png in Resources */,
 				2103EF34219951260028BC07 /* LICENSE in Resources */,
 				214F418F21995EDD00C922D1 /* LICENSE in Resources */,
+				216D0CA821C37FED00DE3BCD /* MRCLAvatarHeaderView.xib in Resources */,
 				2112A28121AE91A200A2AB3B /* update_v1_0_1.sql in Resources */,
 				2112A28021AE91A200A2AB3B /* update_v1_2_0.sql in Resources */,
 				214F419321995EDD00C922D1 /* TGRImageViewController.xib in Resources */,
@@ -1018,6 +1050,11 @@
 				"${PODS_ROOT}/FormatterKit/Localizations/vi.lproj",
 				"${PODS_ROOT}/FormatterKit/Localizations/zh-Hans.lproj",
 				"${PODS_ROOT}/FormatterKit/Localizations/zh-Hant.lproj",
+				"${PODS_ROOT}/GPUImage/framework/Resources/lookup.png",
+				"${PODS_ROOT}/GPUImage/framework/Resources/lookup_amatorka.png",
+				"${PODS_ROOT}/GPUImage/framework/Resources/lookup_miss_etikate.png",
+				"${PODS_ROOT}/GPUImage/framework/Resources/lookup_soft_elegance_1.png",
+				"${PODS_ROOT}/GPUImage/framework/Resources/lookup_soft_elegance_2.png",
 				"${PODS_ROOT}/IQKeyboardManager/IQKeyBoardManager/Resources/IQKeyboardManager.bundle",
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
 				"${PODS_ROOT}/OcticonsIOS/OcticonsIOS/octicons.ttf",
@@ -1057,6 +1094,11 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/vi.lproj",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/zh-Hans.lproj",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/zh-Hant.lproj",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/lookup.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/lookup_amatorka.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/lookup_miss_etikate.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/lookup_soft_elegance_1.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/lookup_soft_elegance_2.png",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/IQKeyboardManager.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/octicons.ttf",
@@ -1099,7 +1141,9 @@
 				2148A62D21AFEE8700CE2E90 /* OCTRepository+MRCPersistence.m in Sources */,
 				214F41972199641300C922D1 /* UIImage+MRCOcticons.m in Sources */,
 				21508C2421953D8E007C83B9 /* MRCLRouter.m in Sources */,
+				216D0CAE21C398EC00DE3BCD /* UIView+Borders.m in Sources */,
 				214F419421995EDD00C922D1 /* UIImage+AspectFit.m in Sources */,
+				216D0CAB21C3933F00DE3BCD /* MRCLAvatarHeaderModel.m in Sources */,
 				212BAED721A438F600845206 /* MRCLHomepageViewModel.m in Sources */,
 				FB2ED1CF219449B900461C9A /* MRCLAppDelegate.m in Sources */,
 				FB2ED1D521944C2700461C9A /* SSKeychain+MRCLUtil.m in Sources */,
@@ -1111,6 +1155,7 @@
 				2144003821BE5F4F00CBEBD7 /* OCTClient+MRCUser.m in Sources */,
 				212BAEC821A438A400845206 /* MRCLTabBarViewModel.m in Sources */,
 				21EAB8B921B0E08B008DFB43 /* MRCLUserListViewController.m in Sources */,
+				216D0CB121C3A21A00DE3BCD /* UIView+Extension.m in Sources */,
 				21EA7B5721C10778003B12BC /* MRCLOwnedReposItemModel.m in Sources */,
 				21BB620521C200D40010C2CD /* MRCLReposCell.m in Sources */,
 				21508C2721953DDE007C83B9 /* MRCLViewController.m in Sources */,
@@ -1145,6 +1190,7 @@
 				212BAEE021A4FF5A00845206 /* MRCLReposViewModel.m in Sources */,
 				219678EA21BFA77000A5671C /* MRCLButton.m in Sources */,
 				21508C3321956829007C83B9 /* MRCLLoginViewController.m in Sources */,
+				216D0CA621C37F0A00DE3BCD /* MRCLAvatarHeaderView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

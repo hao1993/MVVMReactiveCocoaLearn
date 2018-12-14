@@ -41,7 +41,9 @@
     #import "MRCLReactiveView.h"
     #import "OCTClient+MRCUser.h"
     #import <MJRefresh/MJRefresh.h>
-
+    #import "UIView+Borders.h"
+    #import "UIView+Extension.h"
+    #import <GPUImage/GPUImage.h>
 #endif
 
 #endif /* MVVMReactiveCocoaLearn_Prefix_pch */

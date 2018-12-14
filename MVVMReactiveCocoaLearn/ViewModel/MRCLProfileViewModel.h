@@ -7,10 +7,15 @@
 //
 
 #import "MRCLTabBarViewModel.h"
+#import "MRCLAvatarHeaderModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MRCLProfileViewModel : MRCLTabBarViewModel
+
+/// The current `user`.
+@property (nonatomic, strong, readonly) OCTUser *user;
+@property (nonatomic, strong, readonly) MRCLAvatarHeaderModel *avatarHeaderModel;
 
 @end
 

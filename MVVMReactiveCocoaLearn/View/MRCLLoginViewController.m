@@ -94,7 +94,7 @@
     @weakify(self)
     [RACObserve(self.viewModel, avatarURL) subscribeNext:^(NSURL *avatarURL) {
         @strongify(self)
-        [self.avatarButton sd_setImageWithURL:avatarURL forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"default-avatar"]];
+        [self.avatarButton sd_setImageWithURL:avatarURL forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"defaultAvatar"]];
     }];
     [[self.avatarButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(UIButton *avatarButton) {
         @strongify(self)

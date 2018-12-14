@@ -13,4 +13,5 @@ target 'MVVMReactiveCocoaLearn' do
     pod 'FMDB', '2.6.2'
     pod 'FormatterKit', '1.8.1'
     pod 'MJRefresh'
+    pod 'GPUImage', '0.1.7'
 end
