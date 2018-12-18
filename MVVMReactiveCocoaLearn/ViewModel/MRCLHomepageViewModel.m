@@ -22,10 +22,10 @@
 - (void)initialize {
     [super initialize];
     
-    self.newsViewModel = [[MRCLNewsViewModel alloc] initWithServices:self.services params:nil];
-    self.reposViewModel = [[MRCLReposViewModel alloc] initWithServices:self.services params:nil];
-    self.exploreViewModel = [[MRCLExploreViewModel alloc] initWithServices:self.services params:nil];
-    self.profileViewModel = [[MRCLProfileViewModel alloc] initWithServices:self.services params:nil];
+    self.newsViewModel = [[MRCLNewsViewModel alloc] init];
+    self.reposViewModel = [[MRCLReposViewModel alloc] init];
+    self.exploreViewModel = [[MRCLExploreViewModel alloc] init];
+    self.profileViewModel = [[MRCLProfileViewModel alloc] init];
 }
 
 @end

@@ -26,7 +26,7 @@
     [super viewDidLoad];
     
     UINavigationController *newsNavigationController = ({
-        MRCLNewsViewController *newsViewController = [[MRCLNewsViewController alloc] initWithViewModel:self.viewModel.newsViewModel];
+        MRCLNewsViewController *newsViewController = [[MRCLNewsViewController alloc] init];
         
         UIImage *newsImage = [UIImage octicon_imageWithIcon:@"Rss"
                                             backgroundColor:[UIColor clearColor]
@@ -45,7 +45,7 @@
     });
     
     UINavigationController *reposNavigationController = ({
-        MRCLReposViewController *reposViewController = [[MRCLReposViewController alloc] initWithViewModel:self.viewModel.reposViewModel];
+        MRCLReposViewController *reposViewController = [[MRCLReposViewController alloc] init];
         
         UIImage *reposImage = [UIImage octicon_imageWithIcon:@"Repo"
                                              backgroundColor:[UIColor clearColor]
@@ -64,7 +64,7 @@
     });
     
     UINavigationController *exploreNavigationController = ({
-        MRCLExploreViewController *exploreViewController = [[MRCLExploreViewController alloc] initWithViewModel:self.viewModel.exploreViewModel];
+        MRCLExploreViewController *exploreViewController = [[MRCLExploreViewController alloc] init];
         
         UIImage *exploreImage = [UIImage octicon_imageWithIcon:@"Search"
                                                backgroundColor:[UIColor clearColor]
@@ -83,7 +83,7 @@
     });
     
     UINavigationController *profileNavigationController = ({
-        MRCLProfileViewController *profileViewController = [[MRCLProfileViewController alloc] initWithViewModel:self.viewModel.profileViewModel];
+        MRCLProfileViewController *profileViewController = [[MRCLProfileViewController alloc] init];
         
         UIImage *profileImage = [UIImage octicon_imageWithIcon:@"Person"
                                                backgroundColor:[UIColor clearColor]

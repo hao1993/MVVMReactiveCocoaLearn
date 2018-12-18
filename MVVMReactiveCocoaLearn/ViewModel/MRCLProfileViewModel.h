@@ -11,7 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MRCLProfileViewModel : MRCLTabBarViewModel
+@interface MRCLProfileViewModel : NSObject
 
 /// The current `user`.
 @property (nonatomic, strong, readonly) OCTUser *user;

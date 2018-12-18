@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MRCLExploreViewModel : MRCLTabBarViewModel
+@interface MRCLExploreViewModel : NSObject
 
 @end
 

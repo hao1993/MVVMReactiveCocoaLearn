@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MRCLNewsViewModel : MRCLTabBarViewModel
+@interface MRCLNewsViewModel : NSObject
 
 @end
 

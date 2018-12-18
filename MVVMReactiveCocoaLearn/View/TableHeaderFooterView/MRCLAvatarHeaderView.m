@@ -58,7 +58,7 @@
     }];
     
     // configure coverImageView
-    self.coverImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, iPhoneX ? 323 + 24 : 323)];
+    self.coverImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.frame), iPhoneX ? 323 + 24 : 323)];
     
     self.coverImageView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     self.coverImageView.contentMode = UIViewContentModeScaleAspectFill;
@@ -72,7 +72,7 @@
     self.bluredCoverImageView.clipsToBounds = YES;
     
     [self.coverImageView addSubview:self.bluredCoverImageView];
-    [self.overView insertSubview:self.coverImageView atIndex:0];
+    [self insertSubview:self.coverImageView atIndex:0];
     
     self.gaussianBlurFilter = [[GPUImageGaussianBlurFilter alloc] init];
     self.gaussianBlurFilter.blurRadiusInPixels = 20;
@@ -153,15 +153,11 @@
 }
 
 - (IBAction)reposViewAction:(id)sender {
-    MRCLPublicReposViewController *reposVC = [[MRCLPublicReposViewController alloc] init];
-    reposVC.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:reposVC animated:YES];
+    [self.model.repositoriesCommand execute:nil];
 }
 
 - (IBAction)followingViewAction:(id)sender {
-    MRCLUserListViewController *reposVC = [[MRCLUserListViewController alloc] init];
-    reposVC.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:reposVC animated:YES];
+    [self.model.followingCommand execute:nil];
 }
 
 #pragma mark - UIViewControllerTransitioningDelegate

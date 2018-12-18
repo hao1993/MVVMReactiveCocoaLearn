@@ -7,6 +7,7 @@
 //
 
 #import "MRCLProfileViewModel.h"
+#import "MRCLPublicReposViewController.h"
 
 @interface MRCLProfileViewModel ()
 @property (nonatomic, strong, readwrite) OCTUser *user;
@@ -15,20 +16,19 @@
 
 @implementation MRCLProfileViewModel
 
-- (instancetype)initWithServices:(id<MRCLViewModelServices>)services params:(NSDictionary *)params {
-    self = [super initWithServices:services params:params];
-    if (self) {
-        id user = params[@"user"];
-        
-        if ([user isKindOfClass:[OCTUser class]]) {
-            self.user = params[@"user"];
-        } else if ([user isKindOfClass:[NSDictionary class]]) {
-            self.user = [OCTUser modelWithDictionary:user error:nil];
-        } else {
-            self.user = [OCTUser mrc_currentUser];
-        }
+- (instancetype)init {
+    if (self = [super init]) {
+        [self initialize];
     }
     return self;
+}
+
+- (void)initialize {
+    @weakify(self);
+    
+    self.user = [OCTUser mrc_currentUser];
+    self.avatarHeaderModel = [[MRCLAvatarHeaderModel alloc] initWithUser:self.user];
+    
 }
 
 @end

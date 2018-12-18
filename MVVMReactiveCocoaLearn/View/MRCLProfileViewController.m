@@ -17,6 +17,7 @@
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) MRCLAvatarHeaderView *avatarView;
 @property (nonatomic, strong) MRCLAvatarHeaderModel *avatarModel;
+@property (nonatomic, strong) MRCLProfileViewModel *viewModel;
 @end
 
 @implementation MRCLProfileViewController
@@ -29,12 +30,31 @@
     self.view.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.tableView];
     
+    self.viewModel = [[MRCLProfileViewModel alloc] init];
+    
     self.avatarView = [[NSBundle mainBundle] loadNibNamed:@"MRCLAvatarHeaderView" owner:nil options:nil].firstObject;
     self.avatarView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 381);
+    [self.avatarView bindModel:self.viewModel.avatarHeaderModel];
+    
     self.tableView.tableHeaderView = self.avatarView;
     
-    self.avatarModel = [[MRCLAvatarHeaderModel alloc] initWithUser:[OCTUser mrc_currentUser]];
-    [self.avatarView bindModel:self.avatarModel];
+    
+    @weakify(self);
+    self.viewModel.avatarHeaderModel.repositoriesCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
+        @strongify(self);
+        MRCLPublicReposViewController *reposVC = [[MRCLPublicReposViewController alloc] init];
+        reposVC.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:reposVC animated:YES];
+        return [RACSignal empty];
+    }];
+    
+    self.viewModel.avatarHeaderModel.followingCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
+        @strongify(self);
+        MRCLUserListViewController *reposVC = [[MRCLUserListViewController alloc] init];
+        reposVC.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:reposVC animated:YES];
+        return [RACSignal empty];
+    }];
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {

@@ -145,7 +145,6 @@
                             </connections>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="bdg-xR-M5d" secondAttribute="bottom" id="5Fj-3s-NGk"/>
                         <constraint firstAttribute="trailing" secondItem="yac-yt-34f" secondAttribute="trailing" id="IDL-7e-kly"/>
@@ -179,7 +178,7 @@
                 <outlet property="overView" destination="4J9-hi-wsO" id="ZJ9-qc-Tp0"/>
                 <outlet property="repositoriesLabel" destination="Wh5-ie-8Sl" id="lXl-7n-4CG"/>
             </connections>
-            <point key="canvasLocation" x="-454.39999999999998" y="-220.83958020989508"/>
+            <point key="canvasLocation" x="-662" y="-254"/>
         </view>
         <tapGestureRecognizer id="NvR-Cs-GEC">
             <connections>
