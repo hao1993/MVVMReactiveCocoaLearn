@@ -38,24 +38,25 @@
     
     self.tableView.tableHeaderView = self.avatarView;
     
-    
     @weakify(self);
-    self.viewModel.avatarHeaderModel.repositoriesCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
+    [[self.avatarView.followerViewGesture rac_gestureSignal] subscribeNext:^(id x) {
+        NSLog(@"%s", __func__);
+    }];
+    [[self.avatarView.reposityViewGesture rac_gestureSignal] subscribeNext:^(id x) {
         @strongify(self);
         MRCLPublicReposViewController *reposVC = [[MRCLPublicReposViewController alloc] init];
         reposVC.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:reposVC animated:YES];
-        return [RACSignal empty];
     }];
-    
-    self.viewModel.avatarHeaderModel.followingCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
+    [[self.avatarView.followingViewGesture rac_gestureSignal] subscribeNext:^(id x) {
         @strongify(self);
         MRCLUserListViewController *reposVC = [[MRCLUserListViewController alloc] init];
         reposVC.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:reposVC animated:YES];
-        return [RACSignal empty];
     }];
 }
+
+#pragma mark - UIScrollViewDelegate
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     CGPoint contentOffset = CGPointMake(scrollView.contentOffset.x, scrollView.contentOffset.y);

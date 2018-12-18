@@ -172,29 +172,20 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="avatarButton" destination="86c-qz-cvF" id="CPq-pv-rYL"/>
+                <outlet property="followerViewGesture" destination="NvR-Cs-GEC" id="b1o-Wz-bvk"/>
                 <outlet property="followersLabel" destination="9qY-mY-OFe" id="H2N-k3-cnh"/>
                 <outlet property="followingLabel" destination="2ZK-VB-HDJ" id="LZJ-Hv-erP"/>
+                <outlet property="followingViewGesture" destination="xau-Ng-TGg" id="o4l-8l-jJf"/>
                 <outlet property="nameLabel" destination="3Ss-3Y-L2r" id="qwk-zV-JYg"/>
                 <outlet property="overView" destination="4J9-hi-wsO" id="ZJ9-qc-Tp0"/>
                 <outlet property="repositoriesLabel" destination="Wh5-ie-8Sl" id="lXl-7n-4CG"/>
+                <outlet property="reposityViewGesture" destination="RKL-KN-1x8" id="I9T-8K-e44"/>
             </connections>
             <point key="canvasLocation" x="-662" y="-254"/>
         </view>
-        <tapGestureRecognizer id="NvR-Cs-GEC">
-            <connections>
-                <action selector="followerViewAction:" destination="IR0-MS-jAF" id="kLl-fu-elR"/>
-            </connections>
-        </tapGestureRecognizer>
-        <tapGestureRecognizer id="RKL-KN-1x8">
-            <connections>
-                <action selector="reposViewAction:" destination="IR0-MS-jAF" id="R3P-RZ-AYv"/>
-            </connections>
-        </tapGestureRecognizer>
-        <tapGestureRecognizer id="xau-Ng-TGg">
-            <connections>
-                <action selector="followingViewAction:" destination="IR0-MS-jAF" id="E3a-d0-ueb"/>
-            </connections>
-        </tapGestureRecognizer>
+        <tapGestureRecognizer id="NvR-Cs-GEC"/>
+        <tapGestureRecognizer id="RKL-KN-1x8"/>
+        <tapGestureRecognizer id="xau-Ng-TGg"/>
     </objects>
     <resources>
         <image name="defaultAvatar" width="210" height="210"/>

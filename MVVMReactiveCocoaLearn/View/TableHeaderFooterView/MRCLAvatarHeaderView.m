@@ -148,18 +148,6 @@
     [self.overView addBottomBorderWithHeight:MRC_1PX_WIDTH andColor:HexRGB(colorB2)];
 }
 
-- (IBAction)followerViewAction:(id)sender {
-    
-}
-
-- (IBAction)reposViewAction:(id)sender {
-    [self.model.repositoriesCommand execute:nil];
-}
-
-- (IBAction)followingViewAction:(id)sender {
-    [self.model.followingCommand execute:nil];
-}
-
 #pragma mark - UIViewControllerTransitioningDelegate
 
 - (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source {
