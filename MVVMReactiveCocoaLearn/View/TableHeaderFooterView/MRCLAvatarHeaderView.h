@@ -11,9 +11,9 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MRCLAvatarHeaderView : UIView <MRCLReactiveView>
-@property (weak, nonatomic, readonly) IBOutlet UITapGestureRecognizer *followerViewGesture;
-@property (weak, nonatomic, readonly) IBOutlet UITapGestureRecognizer *reposityViewGesture;
-@property (weak, nonatomic, readonly) IBOutlet UITapGestureRecognizer *followingViewGesture;
+@property (weak, nonatomic) IBOutlet UITapGestureRecognizer *followerViewGesture;
+@property (weak, nonatomic) IBOutlet UITapGestureRecognizer *reposityViewGesture;
+@property (weak, nonatomic) IBOutlet UITapGestureRecognizer *followingViewGesture;
 
 
 @end
