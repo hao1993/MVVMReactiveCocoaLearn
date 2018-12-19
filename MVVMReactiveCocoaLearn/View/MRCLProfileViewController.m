@@ -16,7 +16,6 @@
 @interface MRCLProfileViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) MRCLAvatarHeaderView *avatarView;
-@property (nonatomic, strong) MRCLAvatarHeaderModel *avatarModel;
 @property (nonatomic, strong) MRCLProfileViewModel *viewModel;
 @end
 
@@ -60,7 +59,7 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     CGPoint contentOffset = CGPointMake(scrollView.contentOffset.x, scrollView.contentOffset.y);
-    self.avatarModel.contentOffset = contentOffset;
+    self.viewModel.avatarHeaderModel.contentOffset = contentOffset;
 }
 
 #pragma mark - UITableViewDelegate && UITableViewDataSource
@@ -70,11 +69,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 3;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 44;
+    return section == 0 ? 4 : 1;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
@@ -82,7 +77,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-    return 0.01f;
+    return (section == tableView.numberOfSections - 1) ? 20 : 0.01;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
@@ -98,6 +93,57 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellStr];
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellStr];
+    }
+    cell.accessoryType  = UITableViewCellAccessoryNone;
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    if (indexPath.section == 0) {
+        if (indexPath.row == 0) {
+            cell.imageView.image = [UIImage octicon_imageWithIcon:@"Organization"
+                                                  backgroundColor:UIColor.clearColor
+                                                        iconColor:HexRGB(0x24AFFC)
+                                                        iconScale:1
+                                                          andSize:MRC_LEFT_IMAGE_SIZE];
+            cell.textLabel.text = self.viewModel.company;
+        } else if (indexPath.row == 1) {
+            cell.imageView.image = [UIImage octicon_imageWithIcon:@"Location"
+                                                  backgroundColor:UIColor.clearColor
+                                                        iconColor:HexRGB(0x30C931)
+                                                        iconScale:1
+                                                          andSize:MRC_LEFT_IMAGE_SIZE];
+            cell.textLabel.text = self.viewModel.location;
+        } else if (indexPath.row == 2) {
+            cell.imageView.image = [UIImage octicon_imageWithIcon:@"Mail"
+                                                  backgroundColor:UIColor.clearColor
+                                                        iconColor:HexRGB(0x5586ED)
+                                                        iconScale:1
+                                                          andSize:MRC_LEFT_IMAGE_SIZE];
+            cell.textLabel.text = self.viewModel.email;
+            
+            if (![self.viewModel.email isEqualToString:MRC_EMPTY_PLACEHOLDER]) {
+                cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+            }
+        } else if (indexPath.row == 3) {
+            cell.imageView.image = [UIImage octicon_imageWithIcon:@"Link"
+                                                  backgroundColor:UIColor.clearColor
+                                                        iconColor:HexRGB(0x90DD2F)
+                                                        iconScale:1
+                                                          andSize:MRC_LEFT_IMAGE_SIZE];
+            cell.textLabel.text = self.viewModel.blog;
+            
+            if (![self.viewModel.blog isEqualToString:MRC_EMPTY_PLACEHOLDER]) {
+                cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+                cell.selectionStyle = UITableViewCellSelectionStyleDefault;
+            }
+        }
+    } else if (indexPath.section == 1) {
+        cell.imageView.image = [UIImage octicon_imageWithIcon:@"Gear"
+                                              backgroundColor:UIColor.clearColor
+                                                    iconColor:HexRGB(0x24AFFC)
+                                                    iconScale:1
+                                                      andSize:MRC_LEFT_IMAGE_SIZE];
+        cell.textLabel.text = @"Settings";
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        cell.selectionStyle = UITableViewCellSelectionStyleDefault;
     }
     return cell;
 }

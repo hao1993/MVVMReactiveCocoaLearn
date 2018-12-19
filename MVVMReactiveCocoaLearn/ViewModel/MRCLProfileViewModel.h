@@ -17,6 +17,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong, readonly) OCTUser *user;
 @property (nonatomic, strong, readonly) MRCLAvatarHeaderModel *avatarHeaderModel;
 
+@property (nonatomic, copy, readonly) NSString *company;
+@property (nonatomic, copy, readonly) NSString *location;
+@property (nonatomic, copy, readonly) NSString *email;
+@property (nonatomic, copy, readonly) NSString *blog;
 @end
 
 NS_ASSUME_NONNULL_END
