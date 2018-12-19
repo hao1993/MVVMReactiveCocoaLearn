@@ -215,6 +215,8 @@ typedef id   (^IDBlock_id)  (id);
 
 #define iPhoneX ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)
 
+#define NAVITETION_HEIGHT (iPhoneX ? 88 : 64)
+
 ///--------
 /// Version
 ///--------

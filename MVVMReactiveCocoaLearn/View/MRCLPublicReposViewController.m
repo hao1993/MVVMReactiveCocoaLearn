@@ -92,10 +92,23 @@
 
 - (UITableView *)tableView {
     if (!_tableView) {
-        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) style:UITableViewStyleGrouped];
+        @weakify(self);
+        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, NAVITETION_HEIGHT, SCREEN_WIDTH, SCREEN_HEIGHT - NAVITETION_HEIGHT) style:UITableViewStyleGrouped];
         _tableView.dataSource = self;
         _tableView.delegate = self;
         _tableView.backgroundColor = [UIColor whiteColor];
+        _tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+            @strongify(self);
+            [[[self.viewModel.requestRemoteDataCommand execute:@1] deliverOnMainThread] subscribeNext:^(id x) {
+                
+            } error:^(NSError *error) {
+                @strongify(self);
+                [self.tableView.mj_header endRefreshing];
+            } completed:^{
+                @strongify(self);
+                [self.tableView.mj_header endRefreshing];
+            }];
+        }];
     }
     return _tableView;
 }

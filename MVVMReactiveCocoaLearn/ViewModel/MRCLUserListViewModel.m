@@ -11,7 +11,6 @@
 
 @interface MRCLUserListViewModel ()
 @property (nonatomic, strong, readwrite) RACCommand *requestRemoteDataCommand;
-@property (nonatomic, copy, readwrite) NSArray *users;
 @property (nonatomic, strong) OCTClient *client;
 @property (nonatomic, strong) RACCommand *operationCommand;
 @end
@@ -28,7 +27,11 @@
 - (void)initialize {
     @weakify(self);
 
+    self.page = 1;
+    self.perPage = 3;
+    
     self.client = MRCLSharedAppClient;
+    self.users = [NSMutableArray array];
     
     self.operationCommand = [[RACCommand alloc] initWithSignalBlock:^(MRCLUserListItemModel *model) {
         @strongify(self)
@@ -50,11 +53,19 @@
     
     [self.requestRemoteDataCommand.executionSignals.switchToLatest subscribeNext:^(NSArray *users) {
         @strongify(self);
-        self.users = [users mutableCopy];
+        if (self.page == 1) {
+            self.users = [users mutableCopy];
+        } else {
+            [self.users addObjectsFromArray:users];
+            
+            NSLog(@"******usersCount:%ld  page:%ld", self.users.count, self.page);
+        }
+        NSLog(@"usersCount:%ld  page:%ld", self.users.count, self.page);
     }];
     
     RAC(self, dataSource) = [RACObserve(self, users) map:^(NSArray *users) {
         @strongify(self)
+        NSLog(@"users:%ld page:%ld", users.count, self.page);
         return [self dataSourceWithUsers:users];
     }];
 }
@@ -62,8 +73,8 @@
 - (RACSignal *)requestRemoteDataSignalWithPage:(NSUInteger)page {
     OCTUser *user = [OCTUser mrc_currentUser];
     OCTClient *client = MRCLSharedAppClient;
-    return [[[[client fetchFollowingForUser:user offset:0 perPage:100]
-              take:100]
+    return [[[[client fetchFollowingForUser:user offset:[self offsetForPage:page] perPage:self.perPage]
+              take:self.perPage]
              collect]
             map:^(NSArray *users) {
                 return users;
@@ -95,6 +106,11 @@
     }].array;
     
     return models;
+}
+
+
+- (NSUInteger)offsetForPage:(NSUInteger)page {
+    return (page - 1) * self.perPage;
 }
 
 @end

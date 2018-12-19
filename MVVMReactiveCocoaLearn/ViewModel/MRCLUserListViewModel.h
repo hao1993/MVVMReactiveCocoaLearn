@@ -13,9 +13,13 @@ NS_ASSUME_NONNULL_BEGIN
 @interface MRCLUserListViewModel : NSObject
 
 @property (nonatomic, strong, readonly) RACCommand *requestRemoteDataCommand;
-@property (nonatomic, copy, readonly) NSArray *users;
+@property (nonatomic, strong) NSMutableArray *users;
 @property (nonatomic, copy) NSArray *dataSource;
 
+@property (nonatomic, assign) NSUInteger page;
+@property (nonatomic, assign) NSUInteger perPage;
+
+- (NSUInteger)offsetForPage:(NSUInteger)page;
 @end
 
 NS_ASSUME_NONNULL_END
