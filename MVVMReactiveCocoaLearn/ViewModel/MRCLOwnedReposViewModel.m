@@ -13,6 +13,8 @@
 @property (nonatomic, strong, readwrite) RACCommand *requestRemoteDataCommand;
 @property (nonatomic, strong) OCTClient *client;
 @property (nonatomic, copy, readwrite) NSArray *repositories;
+@property (nonatomic, strong, readwrite) NSMutableArray *users;
+@property (nonatomic, strong, readwrite) NSArray *dataSource;
 @end
 
 @implementation MRCLOwnedReposViewModel

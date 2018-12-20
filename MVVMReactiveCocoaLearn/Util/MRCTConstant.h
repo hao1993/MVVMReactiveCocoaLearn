@@ -222,4 +222,12 @@ typedef id   (^IDBlock_id)  (id);
 ///--------
 
 #define IOS11 @available(iOS 11.0, *)
+
+
+///--------
+/// Perpage
+///--------
+
+static int MRCL_MAX_PERPAGE = 15;
+
 #endif /* MRCTConstant_h */

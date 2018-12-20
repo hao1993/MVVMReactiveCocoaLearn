@@ -100,9 +100,8 @@
         _tableView.backgroundColor = [UIColor whiteColor];
         _tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
             @strongify(self);
-            [[[self.viewModel.requestRemoteDataCommand execute:@1] deliverOnMainThread] subscribeNext:^(id x) {
-                @strongify(self);
-                self.viewModel.page = 1;
+            self.viewModel.page = 1;
+            [[[self.viewModel.requestRemoteDataCommand execute:@(self.viewModel.page)] deliverOnMainThread] subscribeNext:^(id x) {
             } error:^(NSError *error) {
                 @strongify(self);
                 [self.tableView.mj_header endRefreshing];

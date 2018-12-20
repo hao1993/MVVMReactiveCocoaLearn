@@ -13,6 +13,8 @@
 @property (nonatomic, strong, readwrite) RACCommand *requestRemoteDataCommand;
 @property (nonatomic, strong) OCTClient *client;
 @property (nonatomic, strong) RACCommand *operationCommand;
+@property (nonatomic, strong, readwrite) NSMutableArray *users;
+@property (nonatomic, strong, readwrite) NSArray *dataSource;
 @end
 
 @implementation MRCLUserListViewModel
@@ -28,7 +30,7 @@
     @weakify(self);
 
     self.page = 1;
-    self.perPage = 3;
+    self.perPage = MRCL_MAX_PERPAGE;
     
     self.client = MRCLSharedAppClient;
     self.users = [NSMutableArray array];
@@ -54,19 +56,12 @@
     [self.requestRemoteDataCommand.executionSignals.switchToLatest subscribeNext:^(NSArray *users) {
         @strongify(self);
         if (self.page == 1) {
-            self.users = [users mutableCopy];
+            [self.users removeAllObjects];
+            [self.users addObjectsFromArray:users];
         } else {
             [self.users addObjectsFromArray:users];
-            
-            NSLog(@"******usersCount:%ld  page:%ld", self.users.count, self.page);
         }
-        NSLog(@"usersCount:%ld  page:%ld", self.users.count, self.page);
-    }];
-    
-    RAC(self, dataSource) = [RACObserve(self, users) map:^(NSArray *users) {
-        @strongify(self)
-        NSLog(@"users:%ld page:%ld", users.count, self.page);
-        return [self dataSourceWithUsers:users];
+        self.dataSource = [self dataSourceWithUsers:self.users];
     }];
 }
 
