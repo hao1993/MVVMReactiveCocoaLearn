@@ -35,10 +35,15 @@
     [self.viewModel.requestRemoteDataCommand execute:@1];
     
     @weakify(self)
-    [[[RACObserve(self.viewModel, dataSource) distinctUntilChanged] deliverOnMainThread] subscribeNext:^(id x) {
-         @strongify(self)
-         [self.tableView reloadData];
-     }];
+    [[[[RACObserve(self.viewModel, dataSource) skip:1] distinctUntilChanged] deliverOnMainThread] subscribeNext:^(id x) {
+        @strongify(self)
+        if (self.viewModel.dataSource.count > 10 && self.viewModel.dataSource.count < MRCL_MAX_PERPAGE) {
+            [self.tableView.mj_footer endRefreshingWithNoMoreData];
+        } else if (self.viewModel.dataSource.count == MRCL_MAX_PERPAGE) {
+            self.tableView.mj_footer.hidden = NO;
+        }
+        [self.tableView reloadData];
+    }];
 }
 
 #pragma mark - UITableViewDelegate && UITableViewDataSource
@@ -101,7 +106,7 @@
         _tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
             @strongify(self);
             self.viewModel.page = 1;
-            [[[self.viewModel.requestRemoteDataCommand execute:@(self.viewModel.page)] deliverOnMainThread] subscribeNext:^(id x) {
+            [[[self.viewModel.requestRemoteDataCommand execute:@(self.viewModel.page)] deliverOnMainThread] subscribeNext:^(NSArray *users) {
             } error:^(NSError *error) {
                 @strongify(self);
                 [self.tableView.mj_header endRefreshing];
@@ -110,20 +115,23 @@
                 [self.tableView.mj_header endRefreshing];
             }];
         }];
-        
         _tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
             @strongify(self);
             self.viewModel.page += 1;
-            [[[self.viewModel.requestRemoteDataCommand execute:@(self.viewModel.page)] deliverOnMainThread] subscribeNext:^(id x) {
-                
+            [[[self.viewModel.requestRemoteDataCommand execute:@(self.viewModel.page)] deliverOnMainThread] subscribeNext:^(NSArray *users) {
+                if (users.count < MRCL_MAX_PERPAGE) {
+                    [self.tableView.mj_footer endRefreshingWithNoMoreData];
+                } else {
+                    [self.tableView.mj_footer endRefreshing];
+                }
             } error:^(NSError *error) {
                 @strongify(self);
                 [self.tableView.mj_footer endRefreshing];
             } completed:^{
-                @strongify(self);
-                [self.tableView.mj_footer endRefreshing];
+                
             }];
         }];
+        _tableView.mj_footer.hidden = YES;
     }
     return _tableView;
 }
