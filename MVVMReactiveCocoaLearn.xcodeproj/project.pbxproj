@@ -61,6 +61,8 @@
 		216D0CAB21C3933F00DE3BCD /* MRCLAvatarHeaderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 216D0CAA21C3933F00DE3BCD /* MRCLAvatarHeaderModel.m */; };
 		216D0CAE21C398EC00DE3BCD /* UIView+Borders.m in Sources */ = {isa = PBXBuildFile; fileRef = 216D0CAC21C398EB00DE3BCD /* UIView+Borders.m */; };
 		216D0CB121C3A21A00DE3BCD /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 216D0CAF21C3A21A00DE3BCD /* UIView+Extension.m */; };
+		217BA85D21D62C8A003BB4D3 /* Mantle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 218DF186219BFC300038D3F9 /* Mantle.framework */; };
+		217BA85E21D62C8A003BB4D3 /* Mantle.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 218DF186219BFC300038D3F9 /* Mantle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2184357221B8D1B7003DBE75 /* MRCLUserListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2184357121B8D1B7003DBE75 /* MRCLUserListViewModel.m */; };
 		2184358321B8FDC4003DBE75 /* MRCLUserListItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2184358221B8FDC4003DBE75 /* MRCLUserListItemModel.m */; };
 		219678EA21BFA77000A5671C /* MRCLButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 219678E921BFA77000A5671C /* MRCLButton.m */; };
@@ -93,6 +95,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		217BA85F21D62C8A003BB4D3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 218DF17A219BFC300038D3F9 /* Mantle.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D0E9C35619F6DB38000D427D;
+			remoteInfo = "Mantle-iOS";
+		};
 		218DF163219BFBE90038D3F9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 218DF15C219BFBE90038D3F9 /* OctoKitDependencies.xcodeproj */;
@@ -243,6 +252,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				21E87C88219BFEED00E03DDF /* ISO8601DateFormatter.framework in Embed Frameworks */,
+				217BA85E21D62C8A003BB4D3 /* Mantle.framework in Embed Frameworks */,
 				21E87C8C219BFEF600E03DDF /* ReactiveCocoa.framework in Embed Frameworks */,
 				21E87C90219BFF0300E03DDF /* OctoKit.framework in Embed Frameworks */,
 				21E87C77219BFEE400E03DDF /* AFNetworking.framework in Embed Frameworks */,
@@ -410,6 +420,7 @@
 				21E87C76219BFEE400E03DDF /* AFNetworking.framework in Frameworks */,
 				21E87C87219BFEED00E03DDF /* ISO8601DateFormatter.framework in Frameworks */,
 				21E87C8B219BFEF600E03DDF /* ReactiveCocoa.framework in Frameworks */,
+				217BA85D21D62C8A003BB4D3 /* Mantle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -808,6 +819,7 @@
 				21E87C8A219BFEED00E03DDF /* PBXTargetDependency */,
 				21E87C8E219BFEF600E03DDF /* PBXTargetDependency */,
 				21E87C92219BFF0300E03DDF /* PBXTargetDependency */,
+				217BA86021D62C8A003BB4D3 /* PBXTargetDependency */,
 			);
 			name = MVVMReactiveCocoaLearn;
 			productName = MVVMReactiveCocoaLearn;
@@ -1197,6 +1209,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		217BA86021D62C8A003BB4D3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Mantle-iOS";
+			targetProxy = 217BA85F21D62C8A003BB4D3 /* PBXContainerItemProxy */;
+		};
 		21E87C79219BFEE400E03DDF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "AFNetworking iOS";
@@ -1368,6 +1385,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MACH_O_TYPE = mh_execute;
 				PRODUCT_BUNDLE_IDENTIFIER = com.hao.MVVMReactiveCocoaLearn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1387,6 +1405,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MACH_O_TYPE = mh_execute;
 				PRODUCT_BUNDLE_IDENTIFIER = com.hao.MVVMReactiveCocoaLearn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
